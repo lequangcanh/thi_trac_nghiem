@@ -101,8 +101,12 @@ ActiveRecord::Schema.define(version: 20170325164634) do
   create_table "lop_hoc_phans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "ten"
     t.integer  "trang_thai"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "giang_vien_id"
+    t.integer  "mon_hoc_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["giang_vien_id"], name: "index_lop_hoc_phans_on_giang_vien_id", using: :btree
+    t.index ["mon_hoc_id"], name: "index_lop_hoc_phans_on_mon_hoc_id", using: :btree
   end
 
   create_table "mon_hocs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -153,6 +157,8 @@ ActiveRecord::Schema.define(version: 20170325164634) do
   add_foreign_key "de_thi_cau_hois", "cau_hois"
   add_foreign_key "de_thi_cau_hois", "de_this"
   add_foreign_key "de_this", "mon_hocs"
+  add_foreign_key "lop_hoc_phans", "giang_viens"
+  add_foreign_key "lop_hoc_phans", "mon_hocs"
   add_foreign_key "phuong_ans", "cau_hois"
   add_foreign_key "sinh_vien_lop_hoc_phans", "lop_hoc_phans"
   add_foreign_key "sinh_vien_lop_hoc_phans", "sinh_viens"

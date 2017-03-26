@@ -15,7 +15,7 @@ gem "jquery-rails"
 gem "jquery-turbolinks"
 gem "bootstrap-sass", "3.2.0.0"
 gem "jbuilder", "~> 2.5"
-gem "devise"
+gem "ffaker"
 
 group :development, :test do
   gem "byebug", platform: :mri
