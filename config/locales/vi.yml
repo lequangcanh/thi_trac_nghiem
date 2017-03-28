@@ -1,0 +1,18 @@
+vi:
+  layouts:
+    header:
+      logo: "Thi trắc nghiệm"
+    application:
+      title: "Trường cao đẳng nghề Đà Nẵng"
+  gv:
+    mon_hocs:
+      index:
+        title: "Những môn học của bạn"
+    sessions:
+      new:
+        title: "Đăng nhập"
+        msgv: "Mã số giáo viên"
+        password: "Mật khẩu"
+      create:
+        login_fail: "Đăng nhập thất bại"
+        login_success: "Đăng nhập thành công"

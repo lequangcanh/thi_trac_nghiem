@@ -1,0 +1,2 @@
+module Gv::SessionsHelper
+end
