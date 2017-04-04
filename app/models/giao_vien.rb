@@ -5,4 +5,6 @@ class GiaoVien < ApplicationRecord
   has_many :chuyen_mons, class_name: ChuyenMon.name
   has_many :mon_hocs, through: :chuyen_mons, source: :mon_hoc
   has_one :tai_khoan_thitn, class_name: TaiKhoanThitn.name, as: :nguoi_dung
+
+  validates :ma_giao_vien, presence: true, uniqueness: true
 end

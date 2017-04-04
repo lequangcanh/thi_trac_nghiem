@@ -16,3 +16,5 @@ vi:
       create:
         login_fail: "Đăng nhập thất bại"
         login_success: "Đăng nhập thành công"
+      destroy:
+        logout_success: "Đăng xuất thành công"

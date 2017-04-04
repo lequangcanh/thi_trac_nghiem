@@ -1,2 +1,0 @@
-module Gv::MonHocsHelper
-end
