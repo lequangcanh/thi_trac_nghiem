@@ -1,0 +1,17 @@
+<div class="nested-fields">
+  <div class="form-group">
+    <%= f.label :phuong_an, t(".answer") %>
+    <%= f.text_area :phuong_an, rows: "2", class: "form-control",
+      required: true %>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-8">
+      <%= f.label :dap_an_dung, t(".correct_answer") %>
+      <%= f.check_box :dap_an_dung %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to_remove_association t(".remove_answer"), f,
+        class: "btn btn-danger form-control" %>
+    </div>
+  </div>
+</div>

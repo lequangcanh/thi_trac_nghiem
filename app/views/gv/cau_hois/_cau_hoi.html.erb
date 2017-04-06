@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <span class="label label-success">
+      <%= t "gv.cau_hois.do_kho.#{cau_hoi.do_kho}" %>
+    </span>
+    <span>&nbsp;</span>
+    <span>
+      <%= cau_hoi.noi_dung %>
+    </span>
+    </div>
+  <div class="panel-body">
+    <%= render "phuong_an", phuong_ans: cau_hoi.phuong_ans %>
+  </div>
+  <div class="panel-footer">
+    <span>
+      <%= t ".author" %>: <%= cau_hoi.giao_vien.ho_ten_day_du %>
+    </span>
+    <span style="float: right;">
+      <%= link_to edit_gv_cau_hoi_path(cau_hoi) do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+      <span>&#8226</span>
+      <%= link_to gv_cau_hoi_path(cau_hoi), method: :delete,
+        data: {confirm: t(".sure")} do %>
+        <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+    </span>
+  </div>
+</div>
+

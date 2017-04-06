@@ -3,5 +3,5 @@ class TaiKhoanThitn < ApplicationRecord
 
   belongs_to :nguoi_dung, polymorphic: true
 
-  validates :ma_nguoi_dung, presence: true, uniqueness: true
+  validates :password, presence: true
 end

@@ -1,0 +1,30 @@
+<%= form_for [:gv, cau_hoi] do |f| %>
+  <div class="form-group">
+    <%= f.label :noi_dung, t(".content") %>
+    <%= f.text_area :noi_dung, rows: "5", class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :do_kho, t(".difficult") %>
+    <%= f.select :do_kho, options_for_select(CauHoi.do_khos.keys
+      .collect {|key| [I18n.t("gv.cau_hois.do_kho.#{key}"), key]}), {},
+      {class: "form-control"} %>
+  </div>
+
+  <p style="text-align: center;"><strong><%= t ".choice" %>:</strong></p>
+
+  <%= f.fields_for :phuong_ans do |phuong_an| %>
+    <%= render "phuong_an_fields", f: phuong_an %>
+  <% end %>
+
+  <%= f.hidden_field :mon_hoc_id, value: mon_hoc.id %>
+  <div class="form-group row">
+    <div class="col-md-6">
+      <%= link_to_add_association t(".add_answer"), f, :phuong_ans,
+        class: "btn btn-info form-control" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.submit t(".submit"), class: "btn btn-primary form-control" %>
+    </div>
+  </div>
+<% end %>

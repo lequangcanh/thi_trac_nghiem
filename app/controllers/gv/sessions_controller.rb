@@ -1,4 +1,4 @@
-class Gv::SessionsController < ApplicationController
+class Gv::SessionsController < Gv::BaseController
   def new
   end
 
@@ -7,7 +7,7 @@ class Gv::SessionsController < ApplicationController
     if giao_vien && (giao_vien.tai_khoan_thitn.password == params[:session][:password])
       giao_vien_log_in giao_vien
       flash[:success] = t ".login_success"
-      render :new
+      redirect_to gv_lop_mon_hocs_url
     else
       flash[:danger] = t ".login_fail"
       render :new

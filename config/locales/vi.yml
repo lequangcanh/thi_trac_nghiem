@@ -5,9 +5,15 @@ vi:
     application:
       title: "Trường cao đẳng nghề Đà Nẵng"
   gv:
-    mon_hocs:
+    base:
+      not_login: "Vui lòng đăng nhập"
+      subject_not_found: "Không tìm thấy môn học"
+      not_permission: "Bạn không có quyền thực hiện"
+    lop_mon_hocs:
       index:
-        title: "Những môn học của bạn"
+        title: "Những lớp học phần của bạn"
+      lop_mon_hoc:
+        questions: "Xem ngân hàng câu hỏi"
     sessions:
       new:
         title: "Đăng nhập"
@@ -18,3 +24,43 @@ vi:
         login_success: "Đăng nhập thành công"
       destroy:
         logout_success: "Đăng xuất thành công"
+    cau_hois:
+      do_kho:
+        hieu: "Hiểu"
+        nho: "Nhớ"
+        phan_tich: "Phân tích"
+        van_dung: "Vận dụng"
+        tong_hop: "Tổng hợp"
+      index:
+        title: "Ngân hàng câu hỏi"
+        subject: "Môn học"
+        add_question: "Thêm câu hỏi"
+      new:
+        title: "Tạo mới câu hỏi"
+        subject: "Môn học"
+      phuong_an_fields:
+        correct_answer: "Câu trả lời đúng"
+        answer: "Phương án"
+        remove_answer: "Xóa câu trả lời"
+      form_cau_hoi:
+        content: "Nội dung câu hỏi"
+        difficult: "Độ khó"
+        choice: "Các phương án"
+        submit: "Lưu lại"
+        add_answer: "Thêm câu trả lời"
+        count: "Số phương án"
+      create:
+        success: "Tạo câu hỏi thành công"
+        fail: "Tạo câu hỏi không thành công"
+      cau_hoi:
+        author: "Người tạo câu hỏi"
+        sure: "Xác nhận xóa câu hỏi"
+      destroy:
+        success: "Đã xóa câu hỏi thành công"
+        fail: "Xóa câu hỏi không thành công"
+      edit:
+        title: "Cập nhật câu hỏi"
+        subject: "Môn học"
+      update:
+        success: "Cập nhật câu hỏi thành công"
+        fail: "Cập nhật câu hỏi thất bại"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328161056) do
+ActiveRecord::Schema.define(version: 20170404084728) do
 
   create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "de_thi_id"
@@ -45,27 +45,18 @@ ActiveRecord::Schema.define(version: 20170328161056) do
   end
 
   create_table "cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "chuong_id"
     t.integer  "giao_vien_id"
     t.text     "noi_dung",     limit: 65535
     t.integer  "do_kho"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["chuong_id"], name: "fk_rails_a589c4ff26", using: :btree
+    t.integer  "mon_hoc_id"
     t.index ["giao_vien_id"], name: "fk_rails_99bb2bd61a", using: :btree
+    t.index ["mon_hoc_id"], name: "fk_rails_787755fd30", using: :btree
   end
 
   create_table "chuc_nang", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ten_chuc_nang", limit: 50, null: false, collation: "utf8mb4_general_ci"
-  end
-
-  create_table "chuong", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "ten"
-    t.text     "noi_dung_chinh", limit: 65535
-    t.integer  "mon_hoc_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.index ["mon_hoc_id"], name: "fk_rails_882e35a74a", using: :btree
   end
 
   create_table "chuyen_mon", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -306,9 +297,8 @@ ActiveRecord::Schema.define(version: 20170328161056) do
   add_foreign_key "bai_thi", "sinh_vien"
   add_foreign_key "bai_thi_chi_tiet_cau_hoi", "bai_thi"
   add_foreign_key "bai_thi_chi_tiet_phuong_an", "bai_thi_chi_tiet_cau_hoi"
-  add_foreign_key "cau_hoi", "chuong"
   add_foreign_key "cau_hoi", "giao_vien"
-  add_foreign_key "chuong", "mon_hoc"
+  add_foreign_key "cau_hoi", "mon_hoc"
   add_foreign_key "chuyen_mon", "giao_vien"
   add_foreign_key "chuyen_mon", "mon_hoc"
   add_foreign_key "de_thi", "mon_hoc"
