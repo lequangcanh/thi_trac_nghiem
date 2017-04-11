@@ -1,0 +1,7 @@
+<% phuong_ans.each do |phuong_an| %>
+  <p>
+    <%= check_box_tag :dap_an_dung, phuong_an.dap_an_dung, phuong_an.dap_an_dung,
+      disabled: true %>
+    <%= phuong_an.phuong_an %>
+  </p>
+<% end %>

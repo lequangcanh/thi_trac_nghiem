@@ -1,0 +1,7 @@
+<h1><%= t ".title" %></h1>
+<h4 class="subject"><%= t ".subject" %>: <%= @mon_hoc.ten %></h4>
+<div style="margin-bottom: 20px;">
+  <%= link_to t(".add_exam"), new_gv_de_thi_path(mon_hoc_id: @mon_hoc.id),
+    class: "btn btn-primary" %>
+</div>
+<%= render @de_this if @de_this.any? %>

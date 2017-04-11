@@ -1,0 +1,7 @@
+<div class="col-md-4 frame">
+  <%= link_to gv_de_thi_path(de_thi) do %>
+    <%= image_tag "de_thi_default.jpg", size: "250x250" %>
+  <% end %>
+  <h4><%= de_thi.tieu_de %></h4>
+  <p><%= t ".author" %>: <%= de_thi.giao_vien.ho_ten_day_du %></p>
+</div>

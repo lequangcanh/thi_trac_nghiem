@@ -1,0 +1,14 @@
+<h1><%= t ".title" %></h1>
+<h4 class="subject"><%= t ".subject" %>: <%= @de_thi.mon_hoc.ten %></h4>
+<%= render partial: "cau_hoi", collection: @cau_hois if @cau_hois.any? %>
+<div class="choose-question-submit">
+  <p><%= t ".choosen" %></p>
+  <h3>
+    <span class="cau-hoi-count"><%= @de_thi.cau_hois.count %></span>/
+    <%= @de_thi.so_cau_hoi %>
+  </h3>
+  <button class="btn btn-success save-choosen-question"><%= t ".save" %></button>
+  <input type="text" id="choosen-de-thi" value="<%= @de_thi.id %>" hidden>
+</div>
+
+<%= javascript_include_tag "gv/de_thi_cau_hoi" %>

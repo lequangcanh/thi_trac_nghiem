@@ -4,7 +4,7 @@ class CauHoi < ApplicationRecord
   belongs_to :mon_hoc, class_name: MonHoc.name
   belongs_to :giao_vien, class_name: GiaoVien.name
   has_many :phuong_ans, class_name: PhuongAn.name, dependent: :destroy, inverse_of: :cau_hoi
-  has_many :de_thi_cau_hois, class_name: DeThiCauHoi.name
+  has_many :de_thi_cau_hois, class_name: DeThiCauHoi.name, dependent: :destroy
   has_many :de_this, through: :de_thi_cau_hois, source: :de_thi
 
   accepts_nested_attributes_for :phuong_ans, allow_destroy: true, reject_if: :all_blank

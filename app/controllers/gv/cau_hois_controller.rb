@@ -49,14 +49,6 @@ class Gv::CauHoisController < Gv::BaseController
       phuong_ans_attributes: [:id, :phuong_an, :dap_an_dung, :_destroy]
   end
 
-  def find_mon_hoc
-    @mon_hoc = MonHoc.find_by id: params[:mon_hoc_id]
-    unless @mon_hoc
-      flash[:danger] = t "gv.base.subject_not_found"
-      redirect_to gv_lop_mon_hocs_path
-    end
-  end
-
   def correct_giao_vien
     @cau_hoi = current_giao_vien.cau_hois.find_by id: params[:id]
     unless @cau_hoi

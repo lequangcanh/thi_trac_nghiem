@@ -1,0 +1,39 @@
+<div class="col-md-10 col-md-offset-1">
+  <h1><%= @de_thi.tieu_de %></h1>
+  <h4 class="subject"><%= t ".subject" %>: <%= @de_thi.mon_hoc.ten %></h4>
+  <p style="text-align: center;">
+    <% if @de_thi.open? %>
+      <span class="label label-success">
+        <%= I18n.t("gv.de_this.trang_thai.open") %>
+      </span>
+    <% elsif @de_thi.close? %>
+      <span class="label label-danger">
+        <%= I18n.t("gv.de_this.trang_thai.close") %>
+      </span>
+    <% end %>
+    <span>&nbsp</span>
+    <span class="label label-info">
+      <%= t ".time" %>:
+      <%= @de_thi.thoi_gian %>
+      <%= t ".minute" %>
+    </span>
+    <span>&nbsp</span>
+    <span class="label label-info">
+      <%= t ".question_count" %>:
+      <%= @de_thi.so_cau_hoi %>
+    </span>
+  </p>
+  <div style="margin-bottom: 20px;">
+    <%= link_to t(".edit_exam"), edit_gv_de_thi_path(@de_thi),
+      class: "btn btn-primary" %>
+    <%= link_to t(".add_question"), edit_gv_de_thi_path(@de_thi),
+      class: "btn btn-default" %>
+    <%= link_to t(".add_question_from_bank"),
+      gv_de_thi_cau_hois_path(de_thi_id: @de_thi.id),
+      class: "btn btn-default" %>
+      <%= link_to t(".delete"), gv_de_thi_path(@de_thi), method: :delete,
+      data: {confirm: t(".sure")}, class: "btn btn-danger" %>
+  </div>
+  <%= render partial: "cau_hoi", collection: @de_thi.cau_hois,
+    locals: {de_thi: @de_thi} %>
+</div>

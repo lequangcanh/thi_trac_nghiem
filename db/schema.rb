@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404084728) do
+ActiveRecord::Schema.define(version: 20170410090243) do
 
   create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "de_thi_id"
@@ -83,6 +83,13 @@ ActiveRecord::Schema.define(version: 20170404084728) do
     t.integer  "trang_thai"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "giao_vien_id"
+    t.integer  "so_cau_nho"
+    t.integer  "so_cau_hieu"
+    t.integer  "so_cau_phan_tich"
+    t.integer  "so_cau_van_dung"
+    t.integer  "so_cau_tong_hop"
+    t.index ["giao_vien_id"], name: "fk_rails_42449c7b66", using: :btree
     t.index ["mon_hoc_id"], name: "fk_rails_f608774188", using: :btree
   end
 
@@ -301,6 +308,7 @@ ActiveRecord::Schema.define(version: 20170404084728) do
   add_foreign_key "cau_hoi", "mon_hoc"
   add_foreign_key "chuyen_mon", "giao_vien"
   add_foreign_key "chuyen_mon", "mon_hoc"
+  add_foreign_key "de_thi", "giao_vien"
   add_foreign_key "de_thi", "mon_hoc"
   add_foreign_key "de_thi_cau_hoi", "cau_hoi"
   add_foreign_key "de_thi_cau_hoi", "de_thi"

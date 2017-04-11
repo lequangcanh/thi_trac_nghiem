@@ -1,0 +1,5 @@
+<div class="col-md-8 col-md-offset-2">
+  <h1><%= @de_thi.tieu_de %></h1>
+  <h4 class="subject"><%= t ".subject" %>: <%= @de_thi.mon_hoc.ten %></h4>
+  <%= render "form_de_thi", de_thi: @de_thi, mon_hoc: @de_thi.mon_hoc %>
+</div>

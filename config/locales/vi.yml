@@ -14,6 +14,7 @@ vi:
         title: "Những lớp học phần của bạn"
       lop_mon_hoc:
         questions: "Xem ngân hàng câu hỏi"
+        exam: "Xem các đề thi"
     sessions:
       new:
         title: "Đăng nhập"
@@ -64,3 +65,66 @@ vi:
       update:
         success: "Cập nhật câu hỏi thành công"
         fail: "Cập nhật câu hỏi thất bại"
+    de_this:
+      trang_thai:
+        close: "Đóng"
+        open: "Mở"
+      index:
+        title: "Ngân hàng đề thi"
+        subject: "Môn học"
+        add_exam: "Thêm đề thi"
+      new:
+        title: "Tạo mới đề thi"
+        subject: "Môn học"
+      form_de_thi:
+        title: "Tiêu đề"
+        time: "Thời gian"
+        minute: "Phút"
+        question_count: "Số câu hỏi"
+        status: "Trạng thái"
+        submit: "Lưu lại"
+      create:
+        success: "Đã thêm đề thi thành công"
+        fail: "Thêm đề thi không thành công"
+      de_thi:
+        author: "Người tạo"
+      show:
+        not_found: "Không tìm thấy đề thi"
+        subject: "Môn học"
+        time: "Thời gian"
+        minute: "phút"
+        question_count: "Số câu hỏi"
+        edit_exam: "Chỉnh sửa"
+        add_question: "Thêm câu hỏi"
+        add_question_from_bank: "Thêm câu hỏi từ ngân hàng"
+        delete: "Xóa đề thi"
+        sure: "Xác nhận xóa đề thi?"
+      edit:
+        subject: "Môn học"
+      update:
+        success: "Cập nhật đề thi thành công"
+        fail: "Cập nhật đề thi thất bại"
+      destroy:
+        success: "Xóa đề thi thành công"
+        fail: "Xóa đề thi thất bại"
+      cau_hoi:
+        author: "Người tạo câu hỏi"
+        sure: "Xác nhận loại bỏ câu hỏi"
+        remove: "Loại câu hỏi khỏi đề thi"
+    de_thi_cau_hois:
+      index:
+        title: "Chọn câu hỏi từ ngân hàng"
+        subject: "Môn học"
+        choosen: "Đã chọn"
+        not_found: "Không tìm thấy đề thi"
+        save: "Lưu lại"
+      cau_hoi:
+        author: "Người tạo câu hỏi"
+        choose: "Chọn câu hỏi này"
+      create:
+        success: "Thêm câu hỏi thành công"
+        fail: "Thêm câu hỏi không thành công"
+      destroy:
+        success: "Loại câu hỏi khỏi đề thi thành công"
+        fail: "Loại câu hỏi khỏi đề thi không thành công"
+

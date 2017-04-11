@@ -2,4 +2,6 @@
   <%= image_tag "mon_hoc_default.jpg", size: "250x250" %>
   <h4><%= lop_mon_hoc.mon_hoc.ten %></h4>
   <%= link_to t(".questions"), gv_cau_hois_path(mon_hoc_id: lop_mon_hoc.mon_hoc.id) %>
+  <br>
+  <%= link_to t(".exam"), gv_de_this_path(mon_hoc_id: lop_mon_hoc.mon_hoc.id) %>
 </div>

@@ -15,15 +15,11 @@
     <span>
       <%= t ".author" %>: <%= cau_hoi.giao_vien.ho_ten_day_du %>
     </span>
-    <% if cau_hoi.giao_vien.is_giao_vien? current_giao_vien %>
+    <% if de_thi.giao_vien.is_giao_vien? current_giao_vien %>
       <span style="float: right;">
-        <%= link_to edit_gv_cau_hoi_path(cau_hoi) do %>
-          <span class="glyphicon glyphicon-pencil"></span>
-        <% end %>
-        <span>&#8226</span>
-        <%= link_to gv_cau_hoi_path(cau_hoi), method: :delete,
-          data: {confirm: t(".sure")} do %>
-          <span class="glyphicon glyphicon-trash"></span>
+        <%= link_to gv_de_thi_cau_hois_path(cau_hoi_id: cau_hoi.id, de_thi_id: de_thi.id),
+          method: :delete, data: {confirm: t(".sure")} do %>
+          <%= t ".remove" %>
         <% end %>
       </span>
     <% end %>

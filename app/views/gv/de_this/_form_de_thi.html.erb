@@ -1,0 +1,26 @@
+<%= form_for [:gv, de_thi] do |f| %>
+  <div class="form-group">
+    <%= f.label :tieu_de, t(".title") %>
+    <%= f.text_field :tieu_de, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :thoi_gian, "#{t('.time')} (#{t('.minute')})" %>
+    <%= f.number_field :thoi_gian, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :so_cau_hoi, t(".question_count") %>
+    <%= f.number_field :so_cau_hoi, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :trang_thai, t(".status") %>
+    <%= f.select :trang_thai, options_for_select(DeThi.trang_thais.keys
+      .collect {|key| [I18n.t("gv.de_this.trang_thai.#{key}"), key]}), {},
+      {class: "form-control"} %>
+  </div>
+
+  <%= f.hidden_field :mon_hoc_id, value: mon_hoc.id %>
+  <%= f.submit t(".submit"), class: "btn btn-primary" %>
+<% end %>
