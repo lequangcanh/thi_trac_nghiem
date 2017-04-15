@@ -1,0 +1,7 @@
+<% phuong_ans.each do |phuong_an| %>
+  <p id="bai-thi-phuong-an-<%= phuong_an.id %>" data-id="<%= phuong_an.id %>"
+    class="bai-thi-phuong-an">
+    <%= check_box_tag :dap_an_dung, false, false %>
+    <%= phuong_an.phuong_an %>
+  </p>
+<% end %>

@@ -1,10 +1,10 @@
-class Gv::BaseController < ApplicationController
-  layout "layouts/application_gv"
+class Sv::BaseController < ApplicationController
+  layout "layouts/application_sv"
 
-  def logged_in_giao_vien
-    unless giao_vien_logged_in?
+  def logged_in_sinh_vien
+    unless sinh_vien_logged_in?
       flash[:danger] = t "gv.base.not_login"
-      redirect_to gv_login_url
+      redirect_to sv_login_url
     end
   end
 
@@ -12,7 +12,7 @@ class Gv::BaseController < ApplicationController
     @mon_hoc = MonHoc.find_by id: params[:mon_hoc_id]
     unless @mon_hoc
       flash[:danger] = t "gv.base.subject_not_found"
-      redirect_to gv_lop_mon_hocs_path
+      redirect_to sv_lop_mon_hocs_path
     end
   end
 end

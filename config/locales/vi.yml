@@ -1,9 +1,13 @@
 vi:
   layouts:
-    header:
+    header_gv:
       logo: "Thi trắc nghiệm"
-    application:
+    application_gv:
       title: "Trường cao đẳng nghề Đà Nẵng"
+    application_sv:
+      title: "Trường cao đẳng nghề Đà Nẵng"
+    header_sv:
+      logo: "Thi trắc nghiệm"
   gv:
     base:
       not_login: "Vui lòng đăng nhập"
@@ -127,4 +131,44 @@ vi:
       destroy:
         success: "Loại câu hỏi khỏi đề thi thành công"
         fail: "Loại câu hỏi khỏi đề thi không thành công"
-
+  sv:
+    sessions:
+      create:
+        login_success: "Đăng nhập thành công"
+        login_fail: "Đăng nhập thất bại"
+      destroy:
+        logout_success: "Đăng xuất thành công"
+      new:
+        title: "Đăng nhập"
+        mssv: "Mã số sinh viên"
+        password: "Mật khẩu"
+    lop_mon_hocs:
+      index:
+        title: "Những lớp học phần của bạn"
+      lop_mon_hoc:
+        exam: "Vào thi"
+        prohibit: "Chưa nộp học phí"
+    de_this:
+      index:
+        title: "Đề thi"
+        subject: "Môn học"
+      de_thi:
+        start: "Bắt đầu làm bài"
+        sure: "Xác nhận bắt đầu làm bài"
+    bai_this:
+      trang_thai:
+        unmake: "Chưa làm"
+        doing: "Đang làm"
+        done: "Đã hoàn thành"
+      create:
+        de_thi_not_found: "Không tìm thấy đề thi"
+        fail: "Không tạo được bài thi"
+      show:
+        bai_thi_not_found: "Không tìm thấy bài thi"
+        subject: "Môn học"
+        time: "Thời gian"
+        send: "Nộp bài"
+      ket_qua:
+        result: "Kết quả làm bài"
+        correct_answer: "Số câu đúng"
+        score: "Điểm"

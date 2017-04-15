@@ -2,11 +2,11 @@
   <h1><%= @de_thi.tieu_de %></h1>
   <h4 class="subject"><%= t ".subject" %>: <%= @de_thi.mon_hoc.ten %></h4>
   <p style="text-align: center;">
-    <% if @de_thi.open? %>
+    <% if @de_thi.trang_thai_open? %>
       <span class="label label-success">
         <%= I18n.t("gv.de_this.trang_thai.open") %>
       </span>
-    <% elsif @de_thi.close? %>
+    <% elsif @de_thi.trang_thai_close? %>
       <span class="label label-danger">
         <%= I18n.t("gv.de_this.trang_thai.close") %>
       </span>

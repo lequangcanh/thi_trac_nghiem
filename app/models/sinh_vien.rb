@@ -7,4 +7,8 @@ class SinhVien < ApplicationRecord
   has_one :tai_khoan_thitn, class_name: TaiKhoanThitn.name, as: :nguoi_dung
 
   validates :ma_sinh_vien, presence: true, uniqueness: true
+
+  def ho_ten_day_du
+    self.ho_dem + " " + self.ten
+  end
 end

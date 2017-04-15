@@ -1,0 +1,17 @@
+<h1><%= @bai_thi.de_thi.tieu_de %></h1>
+<h4 class="subject"><%= t ".subject" %>: <%= @bai_thi.de_thi.mon_hoc.ten %></h4>
+<div class="bai-thi-chi-tiet">
+  <%= render "cau_hois", cau_hois: @bai_thi.de_thi.cau_hois %>
+</div>
+<div class="do-examination">
+  <p><%= t ".time" %></p>
+  <h3>
+    <span class="time-examination">30:00</span>
+  </h3>
+  <button class="btn btn-success btn-submit-examination" data-id="<%= @bai_thi.id %>">
+    <%= t ".send" %>
+  </button>
+</div>
+<%= render "ket_qua" %>
+
+<%= javascript_include_tag "sv/bai_thi" %>

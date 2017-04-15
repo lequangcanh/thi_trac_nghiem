@@ -10,37 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410090243) do
+ActiveRecord::Schema.define(version: 20170414152654) do
 
   create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "de_thi_id"
     t.integer  "sinh_vien_id"
-    t.date     "gio_bat_dau"
-    t.date     "gio_nop_bai"
+    t.datetime "gio_bat_dau"
+    t.datetime "gio_nop_bai"
     t.integer  "so_cau_dung"
     t.float    "tong_diem",    limit: 24
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "trang_thai",              default: 0
     t.index ["de_thi_id"], name: "fk_rails_f72c001676", using: :btree
     t.index ["sinh_vien_id"], name: "fk_rails_7473fb064e", using: :btree
   end
 
   create_table "bai_thi_chi_tiet_cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "bai_thi_id"
-    t.text     "noi_dung",     limit: 65535
     t.boolean  "tra_loi_dung"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "cau_hoi_id"
     t.index ["bai_thi_id"], name: "fk_rails_12b3e23e4c", using: :btree
   end
 
   create_table "bai_thi_chi_tiet_phuong_an", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "bai_thi_chi_tiet_cau_hoi_id"
-    t.text     "phuong_an",                   limit: 65535
-    t.boolean  "thi_sinh_chon"
-    t.boolean  "dap_an_dung"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "phuong_an_chon_id"
     t.index ["bai_thi_chi_tiet_cau_hoi_id"], name: "fk_rails_f416538f26", using: :btree
   end
 

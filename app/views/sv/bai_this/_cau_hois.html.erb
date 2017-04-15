@@ -1,0 +1,11 @@
+<% cau_hois.each do |cau_hoi| %>
+  <div class="panel panel-primary bai-thi-cau-hoi"
+    id="bai-thi-cau-hoi-<%= cau_hoi.id %>" data-id="<%= cau_hoi.id %>">
+    <div class="panel-heading">
+      <%= cau_hoi.noi_dung %>
+    </div>
+    <div class="panel-body">
+      <%= render "phuong_ans", phuong_ans: cau_hoi.phuong_ans %>
+    </div>
+  </div>
+<% end %>
