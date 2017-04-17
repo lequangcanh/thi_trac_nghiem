@@ -152,9 +152,12 @@ vi:
       index:
         title: "Đề thi"
         subject: "Môn học"
+        not_found: "Không tìm thấy môn học"
+        no_exam: "Không có đề thi nào"
       de_thi:
         start: "Bắt đầu làm bài"
         sure: "Xác nhận bắt đầu làm bài"
+        done_exam: "Đã hoàn thành"
     bai_this:
       trang_thai:
         unmake: "Chưa làm"
@@ -172,3 +175,6 @@ vi:
         result: "Kết quả làm bài"
         correct_answer: "Số câu đúng"
         score: "Điểm"
+        close: "Đóng"
+      create:
+        done_exam: "Bạn đã làm bài thi này"

@@ -5,16 +5,21 @@ class Sv::BaiThisController < Sv::BaseController
 
   def create
     BaiThiChiTietCauHoi.transaction do
-      @bai_thi = @de_thi.bai_this.build sinh_vien: current_sinh_vien,
-        gio_bat_dau: Time.now, trang_thai: 1
-      if @bai_thi.save
-        @de_thi.cau_hois.each do |cau_hoi|
-          @bai_thi.bai_thi_chi_tiet_cau_hois.create! cau_hoi_id: cau_hoi.id
-        end
-        redirect_to sv_bai_thi_path(@bai_thi)
+      if current_sinh_vien.bai_this.de_thi_ids.include? @de_thi.id
+        flash[:danger] = t ".done_exam"
+        redirect_to sv_root_path
       else
-        flash[:danger] = t ".fail"
-        redirect_to sv_de_this_path(mon_hoc_id: @de_thi.mon_hoc.id)
+        @bai_thi = @de_thi.bai_this.build sinh_vien: current_sinh_vien,
+          gio_bat_dau: Time.now, trang_thai: 1
+        if @bai_thi.save
+          @de_thi.cau_hois.each do |cau_hoi|
+            @bai_thi.bai_thi_chi_tiet_cau_hois.create! cau_hoi_id: cau_hoi.id
+          end
+          redirect_to sv_bai_thi_path(@bai_thi)
+        else
+          flash[:danger] = t ".fail"
+          redirect_to sv_de_this_path(mon_hoc_id: @de_thi.mon_hoc.id)
+        end
       end
     end
   end

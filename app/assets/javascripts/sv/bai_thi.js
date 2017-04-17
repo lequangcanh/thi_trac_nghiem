@@ -1,6 +1,33 @@
 $(document).ready(function(){
+  var minute = Number($('#time-exam-minute').text());
+  var second = Number($('#time-exam-second').text());
+  var timeout = null;
+
+  function start_exam() {
+    if(second == -1) {
+      minute -= 1;
+      second = 59;
+    }
+
+    if(minute == -1) {
+      $('.btn-submit-examination').click();
+      return false;
+    }
+
+    $('#time-exam-minute').text(minute);
+    $('#time-exam-second').text(second);
+
+    timeout = setTimeout(function(){
+      second--;
+      start_exam();
+    }, 1000);
+  }
+
+  start_exam();
+
   var data = {};
   $('.btn-submit-examination').on('click', function(){
+    clearTimeout(timeout);
     var bai_thi_id = this.dataset.id;
 
     $('.bai-thi-chi-tiet').find('.bai-thi-cau-hoi').each(function(){

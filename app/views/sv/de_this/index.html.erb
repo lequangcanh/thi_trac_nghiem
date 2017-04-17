@@ -1,3 +1,9 @@
 <h1><%= t ".title" %></h1>
 <h4 class="subject"><%= t ".subject" %>: <%= @mon_hoc.ten %></h4>
-<%= render @de_this if @de_this.any? %>
+<% if @de_this.any? %>
+  <%= render @de_this %>
+<% else %>
+  <h3 style="text-align: center">
+    <span class="label label-danger"><%= t ".no_exam" %></span>
+  </h3>
+<% end %>
