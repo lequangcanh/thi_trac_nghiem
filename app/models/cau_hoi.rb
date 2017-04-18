@@ -9,7 +9,7 @@ class CauHoi < ApplicationRecord
 
   accepts_nested_attributes_for :phuong_ans, allow_destroy: true, reject_if: :all_blank
 
-  enum do_kho: {nho: 1, hieu: 2, phan_tich: 3, van_dung: 4, tong_hop: 5}
+  enum do_kho: {nho: 1, hieu: 2, phan_tich: 3, van_dung: 4, tong_hop: 5}, _prefix: true
 
   validates :noi_dung, presence: true
 

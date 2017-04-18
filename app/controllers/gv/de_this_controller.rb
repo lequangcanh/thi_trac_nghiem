@@ -18,7 +18,7 @@ class Gv::DeThisController < Gv::BaseController
     else
       flash[:danger] = t ".fail"
     end
-    redirect_to gv_de_this_path(mon_hoc_id: de_thi_params[:mon_hoc_id])
+    redirect_to gv_de_thi_path @de_thi
   end
 
   def show

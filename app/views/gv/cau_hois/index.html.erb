@@ -1,5 +1,11 @@
 <h1><%= t ".title" %></h1>
 <h4 class="subject"><%= t ".subject" %>: <%= @mon_hoc.ten %></h4>
+<h4 class="subject">
+  <span class="label label-info">
+    <span><%= t ".question_count" %>: </span>
+    <%= @cau_hois.count %>
+  </span>
+</h4>
 <div style="margin-bottom: 20px;">
   <%= link_to t(".add_question"), new_gv_cau_hoi_path(mon_hoc_id: @mon_hoc.id),
     class: "btn btn-primary" %>

@@ -1,9 +1,11 @@
 class Gv::DeThiCauHoisController < Gv::BaseController
   before_action :logged_in_giao_vien
-  before_action :find_de_thi, only: [:index, :create, :destroy]
+  before_action :correct_giao_vien, only: [:index, :create, :destroy]
 
   def index
-    @cau_hois = @de_thi.mon_hoc.cau_hois.newest
+    tat_ca_cau_hois = @de_thi.mon_hoc.cau_hois.newest
+    cau_hoi_da_chon = @de_thi.cau_hois.newest
+    @cau_hois = tat_ca_cau_hois - cau_hoi_da_chon
   end
 
   def create
@@ -37,11 +39,11 @@ class Gv::DeThiCauHoisController < Gv::BaseController
 
   private
 
-  def find_de_thi
-    @de_thi = DeThi.find_by id: params[:de_thi_id]
+  def correct_giao_vien
+    @de_thi = current_giao_vien.de_this.find_by id: params[:de_thi_id]
     unless @de_thi
-      flash[:danger] = t ".not_found"
-      redirect_to gv_lop_mon_hocs_path
+      flash[:danger] = t "gv.base.not_permission"
+      redirect_to gv_lop_mon_hocs_url
     end
   end
 end

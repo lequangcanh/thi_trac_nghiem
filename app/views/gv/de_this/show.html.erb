@@ -20,20 +20,25 @@
     <span>&nbsp</span>
     <span class="label label-info">
       <%= t ".question_count" %>:
+      <%= @de_thi.cau_hois.count %>
+      <span>/</span>
       <%= @de_thi.so_cau_hoi %>
     </span>
   </p>
   <div style="margin-bottom: 20px;">
     <%= link_to t(".edit_exam"), edit_gv_de_thi_path(@de_thi),
       class: "btn btn-primary" %>
-    <%= link_to t(".add_question"), edit_gv_de_thi_path(@de_thi),
-      class: "btn btn-default" %>
-    <%= link_to t(".add_question_from_bank"),
+    <%= link_to t(".random_question"), "#", class: "btn btn-default",
+      data: {toggle: "modal", target: "#randomQuestionModal"} %>
+    <%= link_to t(".choose_question"),
       gv_de_thi_cau_hois_path(de_thi_id: @de_thi.id),
       class: "btn btn-default" %>
-      <%= link_to t(".delete"), gv_de_thi_path(@de_thi), method: :delete,
+    <%= link_to t(".delete"), gv_de_thi_path(@de_thi), method: :delete,
       data: {confirm: t(".sure")}, class: "btn btn-danger" %>
   </div>
   <%= render partial: "cau_hoi", collection: @de_thi.cau_hois,
     locals: {de_thi: @de_thi} %>
 </div>
+
+<%= render "random_question_info", de_thi: @de_thi %>
+<%= javascript_include_tag "gv/de_thi" %>

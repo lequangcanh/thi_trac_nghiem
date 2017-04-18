@@ -2,17 +2,27 @@ vi:
   layouts:
     header_gv:
       logo: "Thi trắc nghiệm"
+      lop_mon_hoc: "Lớp học phần"
+      examination: "Đề thi"
+      questions: "Ngân hàng câu hỏi"
     application_gv:
       title: "Trường cao đẳng nghề Đà Nẵng"
     application_sv:
       title: "Trường cao đẳng nghề Đà Nẵng"
     header_sv:
       logo: "Thi trắc nghiệm"
+    de_thi_mon_hoc:
+      header: "Chọn môn học"
+      close: "Đóng"
+    cau_hoi_mon_hoc:
+      header: "Chọn môn học"
+      close: "Đóng"
   gv:
     base:
       not_login: "Vui lòng đăng nhập"
       subject_not_found: "Không tìm thấy môn học"
       not_permission: "Bạn không có quyền thực hiện"
+      logged_in: "Bạn đã đăng nhập"
     lop_mon_hocs:
       index:
         title: "Những lớp học phần của bạn"
@@ -40,6 +50,7 @@ vi:
         title: "Ngân hàng câu hỏi"
         subject: "Môn học"
         add_question: "Thêm câu hỏi"
+        question_count: "Tổng số câu hỏi"
       new:
         title: "Tạo mới câu hỏi"
         subject: "Môn học"
@@ -99,10 +110,21 @@ vi:
         minute: "phút"
         question_count: "Số câu hỏi"
         edit_exam: "Chỉnh sửa"
-        add_question: "Thêm câu hỏi"
-        add_question_from_bank: "Thêm câu hỏi từ ngân hàng"
+        random_question: "Tự động thêm câu hỏi"
+        choose_question: "Thêm câu hỏi thủ công"
         delete: "Xóa đề thi"
         sure: "Xác nhận xóa đề thi?"
+      random_question_info:
+        header: "Nhập thông tin"
+        close: "Đóng"
+        nho: "Số câu nhớ"
+        hieu: "Số câu hiểu"
+        phan_tich: "Số câu phân tích"
+        van_dung: "Số câu vận dụng"
+        tong_hop: "Số câu tổng hợp"
+        submit: "Thêm câu hỏi"
+        question_exist: "Số câu hỏi đã có"
+        question_will_have: "Số câu hỏi sẽ có"
       edit:
         subject: "Môn học"
       update:
@@ -122,6 +144,7 @@ vi:
         choosen: "Đã chọn"
         not_found: "Không tìm thấy đề thi"
         save: "Lưu lại"
+        no_question: "Đã chọn tất cả câu hỏi từ ngân hàng"
       cau_hoi:
         author: "Người tạo câu hỏi"
         choose: "Chọn câu hỏi này"
@@ -131,6 +154,11 @@ vi:
       destroy:
         success: "Loại câu hỏi khỏi đề thi thành công"
         fail: "Loại câu hỏi khỏi đề thi không thành công"
+    ngau_nhien_de_this:
+      create:
+        not_found: "Không tìm thấy đề thi"
+        success: "Đã thêm câu hỏi vào đề thi"
+        fail: "Đã xảy ra lỗi"
   sv:
     sessions:
       create:

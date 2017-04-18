@@ -1,6 +1,12 @@
 <h1><%= t ".title" %></h1>
 <h4 class="subject"><%= t ".subject" %>: <%= @de_thi.mon_hoc.ten %></h4>
-<%= render partial: "cau_hoi", collection: @cau_hois if @cau_hois.any? %>
+<% if @cau_hois.any? %>
+  <%= render partial: "cau_hoi", collection: @cau_hois %>
+<% else %>
+  <h3 style="text-align: center;">
+    <span class="label label-danger"><%= t ".no_question" %></span>
+  </h3>
+<% end %>
 <div class="choose-question-submit">
   <p><%= t ".choosen" %></p>
   <h3>
