@@ -1,0 +1,15 @@
+<% phuong_ans.each do |phuong_an| %>
+  <p>
+    <% if ct_cau_hoi.bai_thi_chi_tiet_phuong_ans.phuong_an_chon_ids(ct_cau_hoi.id)
+      .include? phuong_an.id %>
+      <%= check_box_tag :phuong_an_chon, true, true, disabled: true %>
+    <% else %>
+      <%= check_box_tag :phuong_an, false, false, disabled: true %>
+    <% end %>
+    <% if phuong_an.dap_an_dung %>
+      <span class="label label-success"><%= phuong_an.phuong_an %></span>
+    <% else %>
+      <%= phuong_an.phuong_an %>
+    <% end %>
+  </p>
+<% end %>

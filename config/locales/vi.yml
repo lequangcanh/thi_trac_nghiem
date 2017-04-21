@@ -11,12 +11,16 @@ vi:
       lop_mon_hoc: "Lớp học phần"
       examination: "Đề thi"
       questions: "Ngân hàng câu hỏi"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
     application_gv:
       title: "Trường cao đẳng nghề Đà Nẵng"
     application_sv:
       title: "Trường cao đẳng nghề Đà Nẵng"
     header_sv:
       logo: "Thi trắc nghiệm"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
     de_thi_mon_hoc:
       header: "Chọn môn học"
       close: "Đóng"
@@ -219,10 +223,12 @@ vi:
         subject: "Môn học"
         not_found: "Không tìm thấy môn học"
         no_exam: "Không có đề thi nào"
+        class_not_found: "Không tìm thấy lớp học phần"
       de_thi:
         start: "Bắt đầu làm bài"
         sure: "Xác nhận bắt đầu làm bài"
         done_exam: "Đã hoàn thành"
+        view: "Xem kết quả"
     bai_this:
       trang_thai:
         unmake: "Chưa làm"
@@ -243,3 +249,8 @@ vi:
         close: "Đóng"
       create:
         done_exam: "Bạn đã làm bài thi này"
+    bai_thi_chi_tiets:
+      show:
+        not_found: "Không tìm thấy bài thi"
+        subject: "Môn học"
+        student: "Sinh viên làm bài"

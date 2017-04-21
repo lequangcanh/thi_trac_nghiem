@@ -1,4 +1,6 @@
 class Sv::SessionsController < Sv::BaseController
+  before_action :check_sv_login, only: [:new, :create]
+
   def new
   end
 
@@ -18,5 +20,14 @@ class Sv::SessionsController < Sv::BaseController
     sinh_vien_log_out
     flash[:success] = t ".logout_success"
     redirect_to sv_login_url
+  end
+
+  private
+
+  def check_sv_login
+    if current_sinh_vien
+      flash[:danger] = t "gv.base.logged_in"
+      redirect_to sv_root_path
+    end
   end
 end

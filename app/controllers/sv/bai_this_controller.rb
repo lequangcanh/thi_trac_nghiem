@@ -18,10 +18,13 @@ class Sv::BaiThisController < Sv::BaseController
           redirect_to sv_bai_thi_path(@bai_thi)
         else
           flash[:danger] = t ".fail"
-          redirect_to sv_de_this_path(mon_hoc_id: @de_thi.mon_hoc.id)
+          redirect_to sv_root_path
         end
       end
     end
+  rescue => exception
+    flash[:danger] = t ".fail"
+    redirect_to sv_root_path
   end
 
   def show

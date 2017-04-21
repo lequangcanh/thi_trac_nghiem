@@ -20,12 +20,12 @@
               <li><%= link_to "Settings", "#" %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", gv_logout_path, method: :delete %>
+                <%= link_to t(".logout"), gv_logout_path, method: :delete %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Log in", gv_login_path %></li>
+          <li><%= link_to t(".login"), gv_login_path %></li>
         <% end %>
       </ul>
     </nav>

@@ -2,7 +2,7 @@
   <%= image_tag "de_thi_default.jpg", size: "250x250" %>
   <h4><%= de_thi.tieu_de %></h4>
   <% if current_sinh_vien.bai_this.de_thi_ids.include? de_thi.id %>
-    <span class="label label-danger"><%= t ".done_exam" %></span>
+    <%= loai_bai_thi de_thi, @lop_mon_hoc %>
   <% else %>
     <%= link_to t(".start"), sv_bai_this_path(de_thi_id: de_thi.id),
       method: :post, data: {confirm: t(".sure")} %>

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :lop_mon_hocs, only: :index
     resources :de_this, only: :index
-    resources :bai_this
+    resources :bai_this, only: [:create, :show, :update]
+    resources :bai_thi_chi_tiets, only: :show
   end
 end
