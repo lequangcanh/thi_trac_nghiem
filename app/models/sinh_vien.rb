@@ -8,6 +8,8 @@ class SinhVien < ApplicationRecord
 
   validates :ma_sinh_vien, presence: true, uniqueness: true
 
+  scope :sort_by_name, ->{order ten: :asc}
+
   def ho_ten_day_du
     self.ho_dem + " " + self.ten
   end

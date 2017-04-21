@@ -1,4 +1,10 @@
 vi:
+  date:
+    formats:
+      date_month_year_concise: "%d-%m-%Y"
+  time:
+    formats:
+      full_time: "%H:%M:%S, %d-%m-%y"
   layouts:
     header_gv:
       logo: "Thi trắc nghiệm"
@@ -27,8 +33,32 @@ vi:
       index:
         title: "Những lớp học phần của bạn"
       lop_mon_hoc:
-        questions: "Xem ngân hàng câu hỏi"
-        exam: "Xem các đề thi"
+        list: "Xem danh sách lớp học phần"
+      show:
+        not_found: "Không tìm thấy lớp học phần"
+        title: "Danh sách sinh viên"
+      danh_sach_sinh_vien:
+        stt: "STT"
+        std_code: "MSSV"
+        name: "Họ tên"
+        birthday: "Ngày sinh"
+        middle_exam_score: "Điểm giữa kỳ"
+        final_exam_score: "Điểm cuối kỳ"
+        detail: "Chi tiết bài thi"
+        not_found: "Chưa có đề thi"
+      edit_lop_mon_hoc:
+        header: "Chi tiết lớp học phần"
+        class_code: "Mã lớp học phần"
+        subject_name: "Tên môn học"
+        teacher: "Giáo viên phụ trách"
+        weight: "Số tín chỉ"
+        middle_exam: "Chọn đề thi giữa kỳ"
+        final_exam: "Chọn đề thi cuối kỳ"
+        save: "Lưu lại"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+        not_found: "Không tìm thấy lớp học phần"
     sessions:
       new:
         title: "Đăng nhập"
@@ -159,6 +189,13 @@ vi:
         not_found: "Không tìm thấy đề thi"
         success: "Đã thêm câu hỏi vào đề thi"
         fail: "Đã xảy ra lỗi"
+    bai_thi_chi_tiets:
+      show:
+        not_found: "Không tìm thấy bài thi"
+        subject: "Môn học"
+        student: "Sinh viên làm bài"
+        correct_answer: "Số câu đúng:"
+        score: "Tổng điểm:"
   sv:
     sessions:
       create:

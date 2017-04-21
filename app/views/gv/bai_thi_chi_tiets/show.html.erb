@@ -1,0 +1,32 @@
+<h1><%= @bai_thi.de_thi.tieu_de %></h1>
+<h4 class="subject"><%= t ".subject" %>: <%= @bai_thi.de_thi.mon_hoc.ten %></h4>
+<h3 class="subject"><%= t ".student" %>: <%= @bai_thi.sinh_vien.ho_ten_day_du %></h3>
+<h4 style="text-align: center;">
+  <span class="label label-info">
+    <span class="glyphicon glyphicon-time"></span>
+    <%= Time.at(@bai_thi.gio_nop_bai - @bai_thi.gio_bat_dau)
+      .utc.strftime("%Mm:%Ss") %>
+    <span>(</span>
+    <%= l @bai_thi.gio_bat_dau, format: :full_time %>
+    <span> - </span>
+    <%= l @bai_thi.gio_nop_bai, format: :full_time %>
+    <span>)</span>
+  </span>
+</h4>
+<h4 style="text-align: center;">
+  <span>&nbsp</span>
+  <span class="label label-info">
+    <span class="glyphicon glyphicon-ok"></span>
+    <%= t ".correct_answer" %>
+    <%= @bai_thi.so_cau_dung %>
+    <span>/</span>
+    <%= @bai_thi.de_thi.so_cau_hoi %>
+  </span>
+  <span>&nbsp</span>
+  <span class="label label-info">
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t ".score" %>
+    <%= @bai_thi.tong_diem %>
+  </span>
+</h4>
+<%= render "cau_hois", ct_cau_hois: @bai_thi.bai_thi_chi_tiet_cau_hois %>

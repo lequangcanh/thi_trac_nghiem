@@ -1,7 +1,8 @@
 <div class="col-md-4 frame">
-  <%= image_tag "lop_mon_hoc.png", size: "250x250" %>
-  <h4><%= lop_mon_hoc.mon_hoc.ten %></h4>
-  <%= link_to t(".questions"), gv_cau_hois_path(mon_hoc_id: lop_mon_hoc.mon_hoc.id) %>
-  <br>
-  <%= link_to t(".exam"), gv_de_this_path(mon_hoc_id: lop_mon_hoc.mon_hoc.id) %>
+  <%= link_to "#", data: {toggle: "modal", target: "#lopMonHocModal"} do %>
+    <%= image_tag "lop_mon_hoc.png", size: "250x250" %>
+  <% end %>
+  <h4><%= lop_mon_hoc.mon_hoc.ten %> - <%= lop_mon_hoc.ma_lop_mon_hoc %></h4>
+  <%= link_to t(".list"), gv_lop_mon_hoc_path(lop_mon_hoc) %>
 </div>
+<%= render "edit_lop_mon_hoc", lop_mon_hoc: lop_mon_hoc %>

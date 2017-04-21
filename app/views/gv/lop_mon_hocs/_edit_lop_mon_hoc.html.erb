@@ -1,0 +1,54 @@
+<div class="modal fade" id="lopMonHocModal" role="dialog">
+  <div class="modal-dialog">
+    <%= form_for [:gv, lop_mon_hoc] do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= t ".header" %></h4>
+        </div>
+        <div class="modal-body" style="overflow-y: auto">
+          <div class="form-group">
+            <%= f.label :ma_lop_mon_hoc, t(".class_code") %>
+            <%= f.text_field :ma_lop_mon_hoc, value: lop_mon_hoc.ma_lop_mon_hoc,
+              class: "form-control", disabled: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :ten_mon_hoc, t(".subject_name") %>
+            <%= f.text_field :ten_mon_hoc, value: lop_mon_hoc.mon_hoc.ten,
+              class: "form-control", disabled: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :giao_vien, t(".teacher") %>
+            <%= f.text_field :giao_vien, value: lop_mon_hoc.giao_vien.ho_ten_day_du,
+              class: "form-control", disabled: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :so_tin_chi, t(".weight") %>
+            <%= f.text_field :so_tin_chi, value: lop_mon_hoc.so_tin_chi,
+              class: "form-control", disabled: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :de_thi_gk_id, t(".middle_exam") %>
+            <%= f.select :de_thi_gk_id, options_for_select(lop_mon_hoc.mon_hoc
+              .de_this.collect{|de_thi| ["#{de_thi.tieu_de} - #{de_thi.giao_vien.ho_ten_day_du}", de_thi.id]},
+              selected: lop_mon_hoc.de_thi_gk_id), {include_blank: true},
+              {class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label :de_thi_ck_id, t(".final_exam") %>
+            <%= f.select :de_thi_ck_id, options_for_select(lop_mon_hoc.mon_hoc
+              .de_this.collect{|de_thi| ["#{de_thi.tieu_de} - #{de_thi.giao_vien.ho_ten_day_du}", de_thi.id]},
+              selected: lop_mon_hoc.de_thi_ck_id), {include_blank: true},
+              {class: "form-control"} %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit t(".save"), class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

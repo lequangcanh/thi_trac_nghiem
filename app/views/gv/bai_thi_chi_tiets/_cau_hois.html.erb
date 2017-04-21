@@ -1,0 +1,15 @@
+<% ct_cau_hois.each do |ct_cau_hoi| %>
+  <% if ct_cau_hoi.tra_loi_dung %>
+    <div class="panel panel-success">
+  <% else %>
+    <div class="panel panel-danger">
+  <% end %>
+    <div class="panel-heading">
+      <%= ct_cau_hoi.cau_hoi.noi_dung %>
+    </div>
+    <div class="panel-body">
+      <%= render "phuong_ans", phuong_ans: ct_cau_hoi.cau_hoi.phuong_ans,
+        ct_cau_hoi: ct_cau_hoi %>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414152654) do
+ActiveRecord::Schema.define(version: 20170421080643) do
 
   create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "de_thi_id"
@@ -169,6 +169,8 @@ ActiveRecord::Schema.define(version: 20170414152654) do
     t.integer "so_luong_toi_da"
     t.integer "so_luong_dang_ky"
     t.boolean "deleted"
+    t.integer "de_thi_gk_id"
+    t.integer "de_thi_ck_id"
     t.index ["giao_vien_id"], name: "FK9docpcq7n4qdsg56s7y265xun", using: :btree
     t.index ["ki_hoc_nam_hoc_id"], name: "FKp4njw4anxx283rpfh99gf8hg4", using: :btree
     t.index ["mon_hoc_id"], name: "FK9myvf12yau7oi2eh40q1ekgaa", using: :btree

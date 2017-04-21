@@ -8,4 +8,7 @@ class BaiThi < ApplicationRecord
   enum trang_thai: {unmake: 0, doing: 1, done: 2}, _prefix: true
 
   scope :de_thi_ids, ->{self.pluck(:de_thi_id)}
+  scope :tim_bai_thi_cua_sv, -> sinh_vien_id, de_thi_id do
+    where sinh_vien_id: sinh_vien_id, de_thi_id: de_thi_id
+  end
 end

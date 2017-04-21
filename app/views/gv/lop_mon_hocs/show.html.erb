@@ -1,0 +1,5 @@
+<h1><%= t ".title" %></h1>
+<div class="section table-responsive">
+  <%= render "danh_sach_sinh_vien", sinh_viens: @lop_mon_hoc.sinh_viens.sort_by_name,
+    lop_mon_hoc: @lop_mon_hoc %>
+</div>
