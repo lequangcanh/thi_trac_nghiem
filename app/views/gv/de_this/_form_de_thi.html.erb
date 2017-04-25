@@ -17,8 +17,8 @@
   <div class="form-group">
     <%= f.label :trang_thai, t(".status") %>
     <%= f.select :trang_thai, options_for_select(DeThi.trang_thais.keys
-      .collect {|key| [I18n.t("gv.de_this.trang_thai.#{key}"), key]}), {},
-      {class: "form-control"} %>
+      .collect {|key| [I18n.t("gv.de_this.trang_thai.#{key}"), key]},
+      selected: de_thi.trang_thai), {}, {class: "form-control"} %>
   </div>
 
   <%= f.hidden_field :mon_hoc_id, value: mon_hoc.id %>

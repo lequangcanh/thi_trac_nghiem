@@ -7,8 +7,8 @@
   <div class="form-group">
     <%= f.label :do_kho, t(".difficult") %>
     <%= f.select :do_kho, options_for_select(CauHoi.do_khos.keys
-      .collect {|key| [I18n.t("gv.cau_hois.do_kho.#{key}"), key]}), {},
-      {class: "form-control"} %>
+      .collect {|key| [I18n.t("gv.cau_hois.do_kho.#{key}"), key]},
+      selected: cau_hoi.do_kho), {}, {class: "form-control"} %>
   </div>
 
   <p style="text-align: center;"><strong><%= t ".choice" %>:</strong></p>
