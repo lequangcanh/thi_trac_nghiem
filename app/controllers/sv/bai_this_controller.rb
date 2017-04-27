@@ -12,7 +12,7 @@ class Sv::BaiThisController < Sv::BaseController
         @bai_thi = @de_thi.bai_this.build sinh_vien: current_sinh_vien,
           gio_bat_dau: Time.now, trang_thai: 1
         if @bai_thi.save
-          @de_thi.cau_hois.each do |cau_hoi|
+          @de_thi.cau_hois.shuffle.each do |cau_hoi|
             @bai_thi.bai_thi_chi_tiet_cau_hois.create! cau_hoi_id: cau_hoi.id
           end
           redirect_to sv_bai_thi_path(@bai_thi)
@@ -58,8 +58,11 @@ class Sv::BaiThisController < Sv::BaseController
 
   def find_bai_thi
     @bai_thi = BaiThi.find_by id: params[:id]
-    unless @bai_thi
+    if @bai_thi.nil?
       flash[:danger] = t ".bai_thi_not_found"
+      redirect_to sv_root_path
+    elsif @bai_thi.trang_thai_done?
+      flash[:danger] = t ".done_exam"
       redirect_to sv_root_path
     end
   end

@@ -1,7 +1,7 @@
 <h1><%= @bai_thi.de_thi.tieu_de %></h1>
 <h4 class="subject"><%= t ".subject" %>: <%= @bai_thi.de_thi.mon_hoc.ten %></h4>
 <div class="bai-thi-chi-tiet">
-  <%= render "cau_hois", cau_hois: @bai_thi.de_thi.cau_hois %>
+  <%= render "cau_hois", cau_hois: @bai_thi.bai_thi_chi_tiet_cau_hois %>
 </div>
 <div class="do-examination">
   <p><%= t ".time" %></p>

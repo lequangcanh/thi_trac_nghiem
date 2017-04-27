@@ -256,6 +256,7 @@ vi:
         not_found: "Không tìm thấy môn học"
         no_exam: "Không có đề thi nào"
         class_not_found: "Không tìm thấy lớp học phần"
+        no_money: "Bạn chưa nộp học phí"
       de_thi:
         start: "Bắt đầu làm bài"
         sure: "Xác nhận bắt đầu làm bài"
@@ -274,6 +275,7 @@ vi:
         subject: "Môn học"
         time: "Thời gian"
         send: "Nộp bài"
+        done_exam: "Bạn đã làm bài thi này"
       ket_qua:
         result: "Kết quả làm bài"
         correct_answer: "Số câu đúng"
@@ -286,3 +288,5 @@ vi:
         not_found: "Không tìm thấy bài thi"
         subject: "Môn học"
         student: "Sinh viên làm bài"
+        correct_answer: "Số câu đúng"
+        score: "Điểm"

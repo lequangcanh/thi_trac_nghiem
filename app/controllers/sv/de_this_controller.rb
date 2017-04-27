@@ -13,9 +13,17 @@ class Sv::DeThisController < Sv::BaseController
 
   def find_lop_mon_hoc
     @lop_mon_hoc = current_sinh_vien.lop_mon_hocs.find_by id: params[:lop_mon_hoc_id]
-    unless @lop_mon_hoc
+    if @lop_mon_hoc.nil?
       flash[:danger] = t ".class_not_found"
       redirect_to sv_lop_mon_hocs_path
+    elsif !da_nop_hoc_phi current_sinh_vien, @lop_mon_hoc
+      flash[:danger] = t ".no_money"
+      redirect_to sv_lop_mon_hocs_path
     end
+  end
+
+  def da_nop_hoc_phi sinh_vien, lop_mon_hoc
+    lop_mon_hoc_sinh_vien = sinh_vien.lop_mon_hoc_sinh_viens.find_by lop_mon_hoc: @lop_mon_hoc
+    lop_mon_hoc_sinh_vien.da_nop
   end
 end
