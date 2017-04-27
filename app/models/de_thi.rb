@@ -5,7 +5,7 @@ class DeThi < ApplicationRecord
   belongs_to :giao_vien, class_name: GiaoVien.name
   has_many :de_thi_cau_hois, class_name: DeThiCauHoi.name, dependent: :destroy
   has_many :cau_hois, through: :de_thi_cau_hois, source: :cau_hoi
-  has_many :bai_this, class_name: BaiThi.name
+  has_many :bai_this, class_name: BaiThi.name, dependent: :destroy
 
   enum trang_thai: {close: 0, open: 1}, _prefix: true
 

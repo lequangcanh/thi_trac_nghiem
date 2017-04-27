@@ -16,3 +16,4 @@
 //= require bootstrap
 //= require growl
 //= require cocoon
+//= require ckeditor/init

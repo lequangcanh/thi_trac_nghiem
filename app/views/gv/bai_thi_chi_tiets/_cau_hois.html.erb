@@ -5,7 +5,7 @@
     <div class="panel panel-danger">
   <% end %>
     <div class="panel-heading">
-      <%= ct_cau_hoi.cau_hoi.noi_dung %>
+      <%= ct_cau_hoi.cau_hoi.noi_dung.html_safe %>
     </div>
     <div class="panel-body">
       <%= render "phuong_ans", phuong_ans: ct_cau_hoi.cau_hoi.phuong_ans,

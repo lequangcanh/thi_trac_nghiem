@@ -4,10 +4,10 @@
       <%= t "gv.cau_hois.do_kho.#{cau_hoi.do_kho}" %>
     </span>
     <span>&nbsp;</span>
-    <span>
-      <%= cau_hoi.noi_dung %>
-    </span>
+    <div>
+      <%= cau_hoi.noi_dung.html_safe %>
     </div>
+  </div>
   <div class="panel-body">
     <%= render "phuong_an", phuong_ans: cau_hoi.phuong_ans %>
   </div>

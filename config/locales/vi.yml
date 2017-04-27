@@ -5,6 +5,17 @@ vi:
   time:
     formats:
       full_time: "%H:%M:%S, %d-%m-%y"
+      default: "%Y/%m/%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+  ckeditor:
+    page_title: "Quản lý tệp tin CKEditor"
+    confirm_delete: "Xóa file?"
+    buttons:
+      cancel: "Hủy"
+      upload: "Thêm ảnh"
+      delete: "Xóa"
+      next: "Tiếp"
   layouts:
     header_gv:
       logo: "Thi trắc nghiệm"

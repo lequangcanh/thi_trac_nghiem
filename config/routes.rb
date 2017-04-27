@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   namespace :gv do
     root "lop_mon_hocs#index"
     get "/login", to: "sessions#new"

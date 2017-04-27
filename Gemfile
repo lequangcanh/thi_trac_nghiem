@@ -17,6 +17,9 @@ gem "bootstrap-sass", "3.2.0.0"
 gem "jbuilder", "~> 2.5"
 gem "ffaker"
 gem "cocoon"
+gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
 
 source "https://rails-assets.org" do
   gem "rails-assets-growl"
