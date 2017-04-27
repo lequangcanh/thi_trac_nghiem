@@ -2,15 +2,16 @@
   <h1><%= @de_thi.tieu_de %></h1>
   <h4 class="subject"><%= t ".subject" %>: <%= @de_thi.mon_hoc.ten %></h4>
   <p style="text-align: center;">
-    <% if @de_thi.trang_thai_open? %>
-      <span class="label label-success">
-        <%= I18n.t("gv.de_this.trang_thai.open") %>
-      </span>
-    <% elsif @de_thi.trang_thai_close? %>
-      <span class="label label-danger">
-        <%= I18n.t("gv.de_this.trang_thai.close") %>
-      </span>
-    <% end %>
+    <span class="label label-info">
+      <span class="glyphicon glyphicon-time"></span>
+      <span><%= t ".time_duration" %></span>
+      <%= l @de_thi.thoi_gian_mo_de, format: :full_time if @de_thi.thoi_gian_mo_de %>
+      <span> - </span>
+      <%= l @de_thi.thoi_gian_dong_de, format: :full_time if @de_thi.thoi_gian_dong_de %>
+    </span>
+  </p>
+  <p style="text-align: center;">
+    <%= get_status @de_thi %>
     <span>&nbsp</span>
     <span class="label label-info">
       <%= t ".time" %>:
@@ -28,8 +29,6 @@
   <div style="margin-bottom: 20px;">
     <%= link_to t(".edit_exam"), edit_gv_de_thi_path(@de_thi),
       class: "btn btn-primary" %>
-    <%= link_to t(".random_question"), "#", class: "btn btn-default",
-      data: {toggle: "modal", target: "#randomQuestionModal"} %>
     <%= link_to t(".choose_question"),
       gv_de_thi_cau_hois_path(de_thi_id: @de_thi.id),
       class: "btn btn-default" %>
@@ -39,6 +38,3 @@
   <%= render partial: "cau_hoi", collection: @de_thi.cau_hois,
     locals: {de_thi: @de_thi} %>
 </div>
-
-<%= render "random_question_info", de_thi: @de_thi %>
-<%= javascript_include_tag "gv/de_thi" %>

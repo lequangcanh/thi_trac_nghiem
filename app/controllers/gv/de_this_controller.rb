@@ -51,7 +51,7 @@ class Gv::DeThisController < Gv::BaseController
 
   def de_thi_params
     params.require(:de_thi).permit :tieu_de, :thoi_gian, :so_cau_hoi,
-      :trang_thai, :mon_hoc_id
+      :thoi_gian_mo_de, :thoi_gian_dong_de, :trang_thai, :mon_hoc_id
   end
 
   def correct_giao_vien

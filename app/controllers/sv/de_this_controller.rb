@@ -3,7 +3,10 @@ class Sv::DeThisController < Sv::BaseController
   before_action :find_lop_mon_hoc, only: :index
 
   def index
-    @de_this = @lop_mon_hoc.mon_hoc.de_this.newest.de_thi_dang_mo
+    @de_this = []
+    @de_this.push @lop_mon_hoc.de_thi_thu if @lop_mon_hoc.de_thi_thu && @lop_mon_hoc.de_thi_thu.dang_mo
+    @de_this.push @lop_mon_hoc.de_thi_gk if @lop_mon_hoc.de_thi_gk && @lop_mon_hoc.de_thi_gk.dang_mo
+    @de_this.push @lop_mon_hoc.de_thi_ck if @lop_mon_hoc.de_thi_ck && @lop_mon_hoc.de_thi_ck.dang_mo
   end
 
   private

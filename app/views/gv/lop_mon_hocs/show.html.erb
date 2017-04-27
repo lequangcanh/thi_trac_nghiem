@@ -1,5 +1,10 @@
 <h1><%= t ".title" %></h1>
-<div class="section table-responsive">
+<%= link_to "#", data: {toggle: "modal", target: "#lopMonHocModal"},
+  class: "btn btn-primary" do %>
+  <%= t ".edit" %>
+<% end %>
+<div class="section table-responsive" style="margin-top: 20px;">
   <%= render "danh_sach_sinh_vien", sinh_viens: @lop_mon_hoc.sinh_viens.sort_by_name,
     lop_mon_hoc: @lop_mon_hoc %>
 </div>
+<%= render "edit_lop_mon_hoc", lop_mon_hoc: @lop_mon_hoc %>

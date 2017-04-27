@@ -52,6 +52,7 @@ vi:
       show:
         not_found: "Không tìm thấy lớp học phần"
         title: "Danh sách sinh viên"
+        edit: "Chọn đề thi"
       danh_sach_sinh_vien:
         stt: "STT"
         std_code: "MSSV"
@@ -67,6 +68,7 @@ vi:
         subject_name: "Tên môn học"
         teacher: "Giáo viên phụ trách"
         weight: "Số tín chỉ"
+        test_exam: "Chọn đề thi thử"
         middle_exam: "Chọn đề thi giữa kỳ"
         final_exam: "Chọn đề thi cuối kỳ"
         save: "Lưu lại"
@@ -132,7 +134,8 @@ vi:
       index:
         title: "Ngân hàng đề thi"
         subject: "Môn học"
-        add_exam: "Thêm đề thi"
+        random_exam: "Thêm đề thi ngẫu nhiên"
+        hand_exam: "Thêm đề thi thủ công"
       new:
         title: "Tạo mới đề thi"
         subject: "Môn học"
@@ -141,6 +144,8 @@ vi:
         time: "Thời gian"
         minute: "Phút"
         question_count: "Số câu hỏi"
+        open_time: "Thời gian mở đề"
+        close_time: "Thời gian đóng đề"
         status: "Trạng thái"
         submit: "Lưu lại"
       create:
@@ -159,6 +164,9 @@ vi:
         choose_question: "Thêm câu hỏi thủ công"
         delete: "Xóa đề thi"
         sure: "Xác nhận xóa đề thi?"
+        time_duration: "Thời gian mở đề"
+        opening: "Đang mở"
+        closing: "Đã đóng"
       random_question_info:
         header: "Nhập thông tin"
         close: "Đóng"
@@ -204,6 +212,19 @@ vi:
         not_found: "Không tìm thấy đề thi"
         success: "Đã thêm câu hỏi vào đề thi"
         fail: "Đã xảy ra lỗi"
+      new:
+        title: "Tạo mới đề thi"
+        subject: "Môn học"
+      form_de_thi:
+        title: "Tiêu đề"
+        time: "Thời gian"
+        minute: "Phút"
+        question_count: "Số câu hỏi"
+        open_time: "Thời gian mở đề"
+        close_time: "Thời gian đóng đề"
+        submit: "Tạo đề thi"
+        diff_count: "Tổng cộng"
+        difficulty: "Độ khó"
     bai_thi_chi_tiets:
       show:
         not_found: "Không tìm thấy bài thi"
@@ -226,7 +247,7 @@ vi:
       index:
         title: "Những lớp học phần của bạn"
       lop_mon_hoc:
-        exam: "Vào thi"
+        exam: "Xem các đề thi"
         prohibit: "Chưa nộp học phí"
     de_this:
       index:

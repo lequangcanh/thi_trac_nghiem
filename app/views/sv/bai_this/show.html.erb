@@ -7,9 +7,9 @@
   <p><%= t ".time" %></p>
   <h3>
     <span class="time-examination">
-      <span id="time-exam-minute"><%= @bai_thi.de_thi.thoi_gian %></span>
+      <span id="time-exam-minute"><%= check_time_out(@bai_thi) / 60 %></span>
       <span>:</span>
-      <span id="time-exam-second">0</span>
+      <span id="time-exam-second"><%= check_time_out(@bai_thi) % 60 %></span>
     </span>
   </h3>
   <button class="btn btn-success btn-submit-examination" data-id="<%= @bai_thi.id %>">

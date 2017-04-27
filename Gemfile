@@ -20,6 +20,7 @@ gem "cocoon"
 gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
+gem "time_difference"
 
 source "https://rails-assets.org" do
   gem "rails-assets-growl"

@@ -1,0 +1,89 @@
+<%= form_for de_thi, url: gv_ngau_nhien_de_this_path do |f| %>
+  <div class="form-group">
+    <%= f.label :tieu_de, t(".title") %>
+    <%= f.text_field :tieu_de, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :thoi_gian, "#{t('.time')} (#{t('.minute')})" %>
+    <%= f.number_field :thoi_gian, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :so_cau_hoi, t(".question_count") %>
+    <%= f.number_field :so_cau_hoi, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :thoi_gian_mo_de, t(".open_time") %>
+    <%= f.datetime_local_field :thoi_gian_mo_de, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :thoi_gian_dong_de, t(".close_time") %>
+    <%= f.datetime_local_field :thoi_gian_dong_de, class: "form-control" %>
+  </div>
+
+  <div class="form-group" id="random-difficult">
+    <%= label_tag :do_kho, t(".difficulty") %>
+    <div class="row">
+      <div class="col-md-2"><%= t "gv.cau_hois.do_kho.nho" %></div>
+      <div class="col-md-2"><%= t "gv.cau_hois.do_kho.hieu" %></div>
+      <div class="col-md-2"><%= t "gv.cau_hois.do_kho.phan_tich" %></div>
+      <div class="col-md-2"><%= t "gv.cau_hois.do_kho.van_dung" %></div>
+      <div class="col-md-2"><%= t "gv.cau_hois.do_kho.tong_hop" %></div>
+      <div class="col-md-2"><%= t ".diff_count" %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <%= number_field_tag :phan_tram_nho, "", class: "form-control percent",
+          placeholder: "%" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :phan_tram_hieu, "", class: "form-control percent",
+          placeholder: "%" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :phan_tram_phan_tich, "", class: "form-control percent",
+          placeholder: "%" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :phan_tram_van_dung, "", class: "form-control percent",
+          placeholder: "%" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :phan_tram_tong_hop, "", class: "form-control percent",
+          placeholder: "%" %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :phan_tram_total, "", class: "form-control",
+          placeholder: "%" %>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-2">
+        <%= number_field_tag :do_kho_nho, 0, class: "form-control", readonly: true %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :do_kho_hieu, 0, class: "form-control", readonly: true %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :do_kho_phan_tich, 0, class: "form-control", readonly: true %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :do_kho_van_dung, 0, class: "form-control", readonly: true %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :do_kho_tong_hop, 0, class: "form-control", readonly: true %>
+      </div>
+      <div class="col-md-2">
+        <%= number_field_tag :do_kho_total, 0, class: "form-control", readonly: true %>
+      </div>
+    </div>
+  </div>
+
+  <%= f.hidden_field :mon_hoc_id, value: mon_hoc.id %>
+  <%= f.submit t(".submit"), class: "btn btn-primary" %>
+<% end %>
+
+<%= javascript_include_tag "gv/de_thi" %>

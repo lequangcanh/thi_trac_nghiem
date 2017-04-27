@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :de_this
     resources :de_thi_cau_hois, only: [:index, :create]
     resource :de_thi_cau_hois, only: :destroy
-    resources :ngau_nhien_de_this, only: :create
+    resources :ngau_nhien_de_this, only: [:new, :create]
     resources :bai_thi_chi_tiets, only: :show
   end
 

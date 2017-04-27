@@ -7,6 +7,8 @@ class LopMonHoc < ApplicationRecord
     primary_key: :de_thi_gk_id
   has_one :de_thi_ck, class_name: DeThi.name, foreign_key: :id,
     primary_key: :de_thi_ck_id
+  has_one :de_thi_thu, class_name: DeThi.name, foreign_key: :id,
+    primary_key: :de_thi_thu_id
   belongs_to :giao_vien, class_name: GiaoVien.name
   belongs_to :mon_hoc, class_name: MonHoc.name
 

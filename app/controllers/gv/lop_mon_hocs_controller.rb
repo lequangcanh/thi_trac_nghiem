@@ -18,7 +18,7 @@ class Gv::LopMonHocsController < Gv::BaseController
   private
 
   def lop_mon_hoc_params
-    params.require(:lop_mon_hoc).permit :de_thi_gk_id, :de_thi_ck_id
+    params.require(:lop_mon_hoc).permit :de_thi_gk_id, :de_thi_ck_id, :de_thi_thu_id
   end
 
   def find_lop_mon_hoc

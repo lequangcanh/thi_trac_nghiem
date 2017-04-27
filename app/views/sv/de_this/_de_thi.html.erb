@@ -1,6 +1,12 @@
 <div class="col-md-4 frame">
   <%= image_tag "de_thi_default.jpg", size: "250x250" %>
   <h4><%= de_thi.tieu_de %></h4>
+  <p style="color: black;">
+    <span class="glyphicon glyphicon-time"></span>
+    <%= l de_thi.thoi_gian_mo_de, format: :full_time if de_thi.thoi_gian_mo_de %>
+    <span> - </span>
+    <%= l de_thi.thoi_gian_dong_de, format: :full_time if de_thi.thoi_gian_dong_de %>
+  </p>
   <% if current_sinh_vien.bai_this.de_thi_ids.include? de_thi.id %>
     <%= loai_bai_thi de_thi, @lop_mon_hoc %>
   <% else %>

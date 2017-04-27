@@ -4,4 +4,10 @@
   <% end %>
   <h4><%= de_thi.tieu_de %></h4>
   <p><%= t ".author" %>: <%= de_thi.giao_vien.ho_ten_day_du %></p>
+  <p style="color: black;">
+    <span class="glyphicon glyphicon-time"></span>
+    <%= l de_thi.thoi_gian_mo_de, format: :full_time if de_thi.thoi_gian_mo_de %>
+    <span> - </span>
+    <%= l de_thi.thoi_gian_dong_de, format: :full_time if de_thi.thoi_gian_dong_de %>
+  </p>
 </div>

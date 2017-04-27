@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427103742) do
+ActiveRecord::Schema.define(version: 20170427111508) do
 
   create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "de_thi_id"
@@ -88,18 +88,13 @@ ActiveRecord::Schema.define(version: 20170427103742) do
     t.string   "tieu_de"
     t.integer  "thoi_gian"
     t.integer  "so_cau_hoi"
-    t.text     "theo_do_kho",      limit: 65535
-    t.text     "theo_chuong",      limit: 65535
-    t.date     "ngay_bat_dau_thi"
-    t.integer  "trang_thai"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.text     "theo_do_kho",       limit: 65535
+    t.text     "theo_chuong",       limit: 65535
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "giao_vien_id"
-    t.integer  "so_cau_nho"
-    t.integer  "so_cau_hieu"
-    t.integer  "so_cau_phan_tich"
-    t.integer  "so_cau_van_dung"
-    t.integer  "so_cau_tong_hop"
+    t.datetime "thoi_gian_mo_de"
+    t.datetime "thoi_gian_dong_de"
     t.index ["giao_vien_id"], name: "fk_rails_42449c7b66", using: :btree
     t.index ["mon_hoc_id"], name: "fk_rails_f608774188", using: :btree
   end
@@ -183,6 +178,7 @@ ActiveRecord::Schema.define(version: 20170427103742) do
     t.boolean "deleted"
     t.integer "de_thi_gk_id"
     t.integer "de_thi_ck_id"
+    t.integer "de_thi_thu_id"
     t.index ["giao_vien_id"], name: "FK9docpcq7n4qdsg56s7y265xun", using: :btree
     t.index ["ki_hoc_nam_hoc_id"], name: "FKp4njw4anxx283rpfh99gf8hg4", using: :btree
     t.index ["mon_hoc_id"], name: "FK9myvf12yau7oi2eh40q1ekgaa", using: :btree
