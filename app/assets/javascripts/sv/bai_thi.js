@@ -2,6 +2,8 @@ $(document).ready(function(){
   var minute = Number($('#time-exam-minute').text());
   var second = Number($('#time-exam-second').text());
   var timeout = null;
+  var bai_thi_id = $('.btn-submit-examination').attr('data-id');
+  var data = {};
 
   function start_exam() {
     if(second == -1) {
@@ -25,11 +27,12 @@ $(document).ready(function(){
 
   start_exam();
 
-  var data = {};
   $('.btn-submit-examination').on('click', function(){
     clearTimeout(timeout);
-    var bai_thi_id = this.dataset.id;
+    update_examination('submit');
+  });
 
+  function update_examination(type) {
     $('.bai-thi-chi-tiet').find('.bai-thi-cau-hoi').each(function(){
       var cau_hoi_id = this.dataset.id;
       var phuong_an_chon = [];
@@ -46,19 +49,32 @@ $(document).ready(function(){
     $.ajax({
       type: 'patch',
       url: '/sv/bai_this/' + bai_thi_id,
-      data: {bai_thi: JSON.stringify(data)},
+      data: {bai_thi: JSON.stringify(data), type: type},
       success: function(data) {
-        $('#correct-answer-result').text(data.so_cau_dung);
-        $('#score-result').text(data.tong_diem);
-        $('#ketquaModal').modal('show');
-        $('#ketquaModal').on('hidden.bs.modal', function() {
-          window.location.href = '/sv';
-        });
+        if(data.type === 'submit'){
+          $('#correct-answer-result').text(data.so_cau_dung);
+          $('#score-result').text(data.tong_diem);
+          $('#ketquaModal').modal('show');
+          $('#ketquaModal').on('hidden.bs.modal', function() {
+            window.location.href = '/sv';
+          });
+        }
+        else{
+          auto_update();
+        }
       },
       error: function(error) {
         $.growl.error({message: error});
         location.reload();
       }
     });
-  });
+  }
+
+  function auto_update(){
+    setTimeout(function(){
+      update_examination('auto');
+    }, 5000);
+  }
+
+  auto_update();
 });

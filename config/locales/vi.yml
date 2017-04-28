@@ -262,6 +262,7 @@ vi:
         sure: "Xác nhận bắt đầu làm bài"
         done_exam: "Đã hoàn thành"
         view: "Xem kết quả"
+        continue: "Tiếp tục làm bài"
     bai_this:
       trang_thai:
         unmake: "Chưa làm"

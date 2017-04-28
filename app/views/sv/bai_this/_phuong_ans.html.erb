@@ -1,7 +1,12 @@
 <% phuong_ans.shuffle.each do |phuong_an| %>
   <p id="bai-thi-phuong-an-<%= phuong_an.id %>" data-id="<%= phuong_an.id %>"
     class="bai-thi-phuong-an">
-    <%= check_box_tag :dap_an_dung, false, false %>
-    <%= phuong_an.phuong_an %>
+    <% if BaiThiChiTietPhuongAn.phuong_an_chon_ids(ct_cau_hoi.id).include? phuong_an.id %>
+      <%= check_box_tag :dap_an_dung, true, true %>
+      <%= phuong_an.phuong_an %>
+    <% else %>
+      <%= check_box_tag :dap_an_dung, false, false %>
+      <%= phuong_an.phuong_an %>
+    <% end %>
   </p>
 <% end %>

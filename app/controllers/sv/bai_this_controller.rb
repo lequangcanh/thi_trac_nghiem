@@ -36,13 +36,21 @@ class Sv::BaiThisController < Sv::BaseController
       update_bai_thi_chi_tiet_phuong_an @bai_thi, cau_hoi_id, phuong_an_chon
       update_bai_thi_chi_tiet_cau_hoi @bai_thi, cau_hoi_id, phuong_an_chon
     end
-    so_cau_dung = @bai_thi.bai_thi_chi_tiet_cau_hois.tong_cau_dung
-    tong_diem = ((so_cau_dung.to_f / @bai_thi.de_thi.so_cau_hoi) * 10).round(2)
-    @bai_thi.update_attributes gio_nop_bai: Time.now, trang_thai: 2,
-      so_cau_dung: so_cau_dung, tong_diem: tong_diem
-    respond_to do |format|
-      format.json {render json: {so_cau_dung: "#{so_cau_dung} / #{@bai_thi.de_thi.so_cau_hoi}",
-        tong_diem: tong_diem}}
+    if params[:type] == "submit"
+      so_cau_dung = @bai_thi.bai_thi_chi_tiet_cau_hois.tong_cau_dung
+      tong_diem = ((so_cau_dung.to_f / @bai_thi.de_thi.so_cau_hoi) * 10).round(2)
+      @bai_thi.update_attributes gio_nop_bai: Time.now, trang_thai: 2,
+        so_cau_dung: so_cau_dung, tong_diem: tong_diem
+      respond_to do |format|
+        format.json {render json: {type: "submit",
+          so_cau_dung: "#{so_cau_dung} / #{@bai_thi.de_thi.so_cau_hoi}",
+          tong_diem: tong_diem}}
+      end
+    else
+      @bai_thi.update_attributes gio_nop_bai: Time.now
+      respond_to do |format|
+        format.json {render json: {type: "auto"}}
+      end
     end
   end
 
