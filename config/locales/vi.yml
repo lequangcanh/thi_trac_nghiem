@@ -24,6 +24,7 @@ vi:
       questions: "Ngân hàng câu hỏi"
       logout: "Đăng xuất"
       login: "Đăng nhập"
+      password: "Đổi mật khẩu"
     application_gv:
       title: "Trường cao đẳng nghề Đà Nẵng"
     application_sv:
@@ -32,6 +33,7 @@ vi:
       logo: "Thi trắc nghiệm"
       logout: "Đăng xuất"
       login: "Đăng nhập"
+      mssv: "MSSV"
     de_thi_mon_hoc:
       header: "Chọn môn học"
       close: "Đóng"
