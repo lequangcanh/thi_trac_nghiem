@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170428134454) do
 
-  create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "de_thi_id"
     t.integer  "sinh_vien_id"
     t.datetime "gio_bat_dau"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.index ["sinh_vien_id"], name: "fk_rails_7473fb064e", using: :btree
   end
 
-  create_table "bai_thi_chi_tiet_cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "bai_thi_chi_tiet_cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "bai_thi_id"
     t.boolean  "tra_loi_dung"
     t.datetime "created_at",   null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.index ["bai_thi_id"], name: "fk_rails_12b3e23e4c", using: :btree
   end
 
-  create_table "bai_thi_chi_tiet_phuong_an", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "bai_thi_chi_tiet_phuong_an", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "bai_thi_chi_tiet_cau_hoi_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.index ["bai_thi_chi_tiet_cau_hoi_id"], name: "fk_rails_f416538f26", using: :btree
   end
 
-  create_table "cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "giao_vien_id"
     t.text     "noi_dung",     limit: 65535
     t.integer  "do_kho"
@@ -59,16 +59,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.string "ten_chuc_nang", limit: 50, null: false, collation: "utf8mb4_general_ci"
   end
 
-  create_table "chuyen_mon", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "giao_vien_id"
-    t.integer  "mon_hoc_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["giao_vien_id"], name: "fk_rails_9d254a250e", using: :btree
-    t.index ["mon_hoc_id"], name: "fk_rails_18bcc98659", using: :btree
-  end
-
-  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
     t.integer  "data_file_size"
@@ -84,7 +75,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.string "ten", limit: 30, null: false, collation: "utf8mb4_general_ci"
   end
 
-  create_table "de_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "de_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "mon_hoc_id"
     t.string   "tieu_de"
     t.integer  "thoi_gian"
@@ -101,7 +92,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.index ["mon_hoc_id"], name: "fk_rails_f608774188", using: :btree
   end
 
-  create_table "de_thi_cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "de_thi_cau_hoi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "de_thi_id"
     t.integer  "cau_hoi_id"
     t.datetime "created_at", null: false
@@ -217,7 +208,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.datetime "ngay_ket_thuc",            precision: 6
   end
 
-  create_table "phuong_an", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "phuong_an", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "cau_hoi_id"
     t.text     "phuong_an",   limit: 65535
     t.boolean  "dap_an_dung"
@@ -266,7 +257,7 @@ ActiveRecord::Schema.define(version: 20170428134454) do
     t.index ["vai_tro_id"], name: "FKenbt8fd3hj80somc9bjpyvb4c", using: :btree
   end
 
-  create_table "tai_khoan_thitn", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "tai_khoan_thitn", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "ma_nguoi_dung"
     t.string   "password"
     t.string   "nguoi_dung_type"
@@ -317,8 +308,6 @@ ActiveRecord::Schema.define(version: 20170428134454) do
   add_foreign_key "bai_thi_chi_tiet_phuong_an", "bai_thi_chi_tiet_cau_hoi"
   add_foreign_key "cau_hoi", "giao_vien"
   add_foreign_key "cau_hoi", "mon_hoc"
-  add_foreign_key "chuyen_mon", "giao_vien"
-  add_foreign_key "chuyen_mon", "mon_hoc"
   add_foreign_key "de_thi", "giao_vien"
   add_foreign_key "de_thi", "mon_hoc"
   add_foreign_key "de_thi_cau_hoi", "cau_hoi"
