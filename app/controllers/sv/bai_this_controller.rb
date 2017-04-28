@@ -10,7 +10,8 @@ class Sv::BaiThisController < Sv::BaseController
         redirect_to sv_root_path
       else
         @bai_thi = @de_thi.bai_this.build sinh_vien: current_sinh_vien,
-          gio_bat_dau: Time.now, trang_thai: 1
+          gio_bat_dau: Time.now, trang_thai: 1,
+          thoi_gian_con_lai: @de_thi.thoi_gian * 60
         if @bai_thi.save
           @de_thi.cau_hois.shuffle.each do |cau_hoi|
             @bai_thi.bai_thi_chi_tiet_cau_hois.create! cau_hoi_id: cau_hoi.id
@@ -40,14 +41,15 @@ class Sv::BaiThisController < Sv::BaseController
       so_cau_dung = @bai_thi.bai_thi_chi_tiet_cau_hois.tong_cau_dung
       tong_diem = ((so_cau_dung.to_f / @bai_thi.de_thi.so_cau_hoi) * 10).round(2)
       @bai_thi.update_attributes gio_nop_bai: Time.now, trang_thai: 2,
-        so_cau_dung: so_cau_dung, tong_diem: tong_diem
+        so_cau_dung: so_cau_dung, tong_diem: tong_diem,
+        thoi_gian_con_lai: params[:remain_time]
       respond_to do |format|
         format.json {render json: {type: "submit",
           so_cau_dung: "#{so_cau_dung} / #{@bai_thi.de_thi.so_cau_hoi}",
           tong_diem: tong_diem}}
       end
     else
-      @bai_thi.update_attributes gio_nop_bai: Time.now
+      @bai_thi.update_attributes thoi_gian_con_lai: params[:remain_time]
       respond_to do |format|
         format.json {render json: {type: "auto"}}
       end

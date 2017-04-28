@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428041124) do
+ActiveRecord::Schema.define(version: 20170428134454) do
 
   create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "de_thi_id"
@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 20170428041124) do
     t.datetime "gio_bat_dau"
     t.datetime "gio_nop_bai"
     t.integer  "so_cau_dung"
-    t.float    "tong_diem",    limit: 24
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.integer  "trang_thai",              default: 0
+    t.float    "tong_diem",         limit: 24
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.integer  "trang_thai",                   default: 0
+    t.integer  "thoi_gian_con_lai"
     t.index ["de_thi_id"], name: "fk_rails_f72c001676", using: :btree
     t.index ["sinh_vien_id"], name: "fk_rails_7473fb064e", using: :btree
   end

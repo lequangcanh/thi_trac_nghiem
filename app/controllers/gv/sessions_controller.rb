@@ -25,7 +25,7 @@ class Gv::SessionsController < Gv::BaseController
   private
 
   def check_gv_login
-    if current_giao_vien
+    if giao_vien_logged_in?
       flash[:danger] = t "gv.base.logged_in"
       redirect_to gv_root_path
     end

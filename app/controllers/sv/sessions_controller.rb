@@ -25,7 +25,7 @@ class Sv::SessionsController < Sv::BaseController
   private
 
   def check_sv_login
-    if current_sinh_vien
+    if sinh_vien_logged_in?
       flash[:danger] = t "gv.base.logged_in"
       redirect_to sv_root_path
     end

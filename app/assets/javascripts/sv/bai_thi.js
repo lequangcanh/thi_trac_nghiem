@@ -29,10 +29,11 @@ $(document).ready(function(){
 
   $('.btn-submit-examination').on('click', function(){
     clearTimeout(timeout);
-    update_examination('submit');
+    var remain_time = minute * 60 + second;
+    update_examination('submit', remain_time);
   });
 
-  function update_examination(type) {
+  function update_examination(type, remain_time) {
     $('.bai-thi-chi-tiet').find('.bai-thi-cau-hoi').each(function(){
       var cau_hoi_id = this.dataset.id;
       var phuong_an_chon = [];
@@ -49,7 +50,7 @@ $(document).ready(function(){
     $.ajax({
       type: 'patch',
       url: '/sv/bai_this/' + bai_thi_id,
-      data: {bai_thi: JSON.stringify(data), type: type},
+      data: {bai_thi: JSON.stringify(data), type: type, remain_time: remain_time},
       success: function(data) {
         if(data.type === 'submit'){
           $('#correct-answer-result').text(data.so_cau_dung);
@@ -71,9 +72,10 @@ $(document).ready(function(){
   }
 
   function auto_update(){
+    var remain_time = minute * 60 + second;
     setTimeout(function(){
-      update_examination('auto');
-    }, 5000);
+      update_examination('auto', remain_time);
+    }, 60000);
   }
 
   auto_update();
