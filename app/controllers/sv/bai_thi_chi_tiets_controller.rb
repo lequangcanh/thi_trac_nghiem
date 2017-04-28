@@ -3,6 +3,10 @@ class Sv::BaiThiChiTietsController < Sv::BaseController
   before_action :find_bai_thi
 
   def show
+    unless @bai_thi.de_thi.xem_ket_qua
+      flash[:danger] = t ".not_found"
+      redirect_to sv_root_path
+    end
   end
 
   private

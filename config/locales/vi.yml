@@ -150,6 +150,7 @@ vi:
         close_time: "Thời gian đóng đề"
         status: "Trạng thái"
         submit: "Lưu lại"
+        review: "Cho phép thí sinh xem lại kết quả"
       create:
         success: "Đã thêm đề thi thành công"
         fail: "Thêm đề thi không thành công"
@@ -227,6 +228,7 @@ vi:
         submit: "Tạo đề thi"
         diff_count: "Tổng cộng"
         difficulty: "Độ khó"
+        review: "Cho phép thí sinh xem lại kết quả"
     bai_thi_chi_tiets:
       show:
         not_found: "Không tìm thấy bài thi"

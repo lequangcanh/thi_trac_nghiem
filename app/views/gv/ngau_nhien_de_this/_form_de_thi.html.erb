@@ -24,6 +24,11 @@
     <%= f.datetime_local_field :thoi_gian_dong_de, class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :xem_ket_qua, t(".review") %>
+    <%= f.check_box :xem_ket_qua %>
+  </div>
+
   <div class="form-group" id="random-difficult">
     <%= label_tag :do_kho, t(".difficulty") %>
     <div class="row">

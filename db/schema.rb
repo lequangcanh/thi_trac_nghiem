@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427111508) do
+ActiveRecord::Schema.define(version: 20170428041124) do
 
   create_table "bai_thi", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "de_thi_id"
@@ -90,11 +90,12 @@ ActiveRecord::Schema.define(version: 20170427111508) do
     t.integer  "so_cau_hoi"
     t.text     "theo_do_kho",       limit: 65535
     t.text     "theo_chuong",       limit: 65535
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.integer  "giao_vien_id"
     t.datetime "thoi_gian_mo_de"
     t.datetime "thoi_gian_dong_de"
+    t.boolean  "xem_ket_qua",                     default: false
     t.index ["giao_vien_id"], name: "fk_rails_42449c7b66", using: :btree
     t.index ["mon_hoc_id"], name: "fk_rails_f608774188", using: :btree
   end
