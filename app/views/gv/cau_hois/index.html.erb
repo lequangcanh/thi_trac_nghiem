@@ -1,11 +1,37 @@
 <h1><%= t ".title" %></h1>
 <h4 class="subject"><%= t ".subject" %>: <%= @mon_hoc.ten %></h4>
 <h4 class="subject">
-  <span class="label label-info">
+  <span class="label label-success">
     <span><%= t ".question_count" %>: </span>
     <%= @cau_hois.count %>
   </span>
 </h4>
+<p class="subject">
+  <span class="label label-info">
+    <span><%= t ".nho_count" %>: </span>
+    <%= @mon_hoc.cau_hois.tong_cau_nho.count %>
+  </span>
+  <span>&nbsp</span>
+  <span class="label label-info">
+    <span><%= t ".hieu_count" %>: </span>
+    <%= @mon_hoc.cau_hois.tong_cau_hieu.count %>
+  </span>
+  <span>&nbsp</span>
+  <span class="label label-info">
+    <span><%= t ".phan_tich_count" %>: </span>
+    <%= @mon_hoc.cau_hois.tong_cau_phan_tich.count %>
+  </span>
+  <span>&nbsp</span>
+  <span class="label label-info">
+    <span><%= t ".van_dung_count" %>: </span>
+    <%= @mon_hoc.cau_hois.tong_cau_van_dung.count %>
+  </span>
+  <span>&nbsp</span>
+  <span class="label label-info">
+    <span><%= t ".tong_hop_count" %>: </span>
+    <%= @mon_hoc.cau_hois.tong_cau_tong_hop.count %>
+  </span>
+</p>
 <div style="margin-bottom: 20px;">
   <%= link_to t(".add_question"), new_gv_cau_hoi_path(mon_hoc_id: @mon_hoc.id),
     class: "btn btn-primary" %>

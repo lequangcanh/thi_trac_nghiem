@@ -75,7 +75,7 @@ $(document).ready(function(){
     var remain_time = minute * 60 + second;
     setTimeout(function(){
       update_examination('auto', remain_time);
-    }, 60000);
+    }, 120000);
   }
 
   auto_update();

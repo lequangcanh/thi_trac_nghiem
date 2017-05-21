@@ -1,7 +1,8 @@
-<% cau_hois.each do |cau_hoi| %>
+<% cau_hois.each_with_index do |cau_hoi, index| %>
   <div class="panel panel-primary bai-thi-cau-hoi"
     id="bai-thi-cau-hoi-<%= cau_hoi.cau_hoi_id %>" data-id="<%= cau_hoi.cau_hoi_id %>">
     <div class="panel-heading">
+      <span><%= t ".cau" %> <%= index + 1 %>:</span>
       <%= cau_hoi.cau_hoi.noi_dung.html_safe %>
     </div>
     <div class="panel-body">

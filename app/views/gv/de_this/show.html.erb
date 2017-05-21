@@ -26,6 +26,33 @@
       <%= @de_thi.so_cau_hoi %>
     </span>
   </p>
+  <p class="subject">
+    <span class="label label-default">
+      <span><%= t ".nho_count" %>: </span>
+      <%= @de_thi.cau_hois.tong_cau_nho.count %>
+    </span>
+    <span>&nbsp</span>
+    <span class="label label-default">
+      <span><%= t ".hieu_count" %>: </span>
+      <%= @de_thi.cau_hois.tong_cau_hieu.count %>
+    </span>
+    <span>&nbsp</span>
+    <span class="label label-default">
+      <span><%= t ".phan_tich_count" %>: </span>
+      <%= @de_thi.cau_hois.tong_cau_phan_tich.count %>
+    </span>
+    <span>&nbsp</span>
+    <span class="label label-default">
+      <span><%= t ".van_dung_count" %>: </span>
+      <%= @de_thi.cau_hois.tong_cau_van_dung.count %>
+    </span>
+    <span>&nbsp</span>
+    <span class="label label-default">
+      <span><%= t ".tong_hop_count" %>: </span>
+      <%= @de_thi.cau_hois.tong_cau_tong_hop.count %>
+    </span>
+  </p>
+
   <div style="margin-bottom: 20px;">
     <%= link_to t(".edit_exam"), edit_gv_de_thi_path(@de_thi),
       class: "btn btn-primary" %>
@@ -35,6 +62,5 @@
     <%= link_to t(".delete"), gv_de_thi_path(@de_thi), method: :delete,
       data: {confirm: t(".sure")}, class: "btn btn-danger" %>
   </div>
-  <%= render partial: "cau_hoi", collection: @de_thi.cau_hois,
-    locals: {de_thi: @de_thi} %>
+  <%= render "cau_hoi", de_thi: @de_thi %>
 </div>

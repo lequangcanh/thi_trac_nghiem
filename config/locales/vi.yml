@@ -100,6 +100,11 @@ vi:
         subject: "Môn học"
         add_question: "Thêm câu hỏi"
         question_count: "Tổng số câu hỏi"
+        nho_count: "Tổng câu nhớ"
+        hieu_count: "Tổng câu hiểu"
+        phan_tich_count: "Tổng câu phân tích"
+        van_dung_count: "Tổng câu vận dụng"
+        tong_hop_count: "Tổng câu tổng hợp"
       new:
         title: "Tạo mới câu hỏi"
         subject: "Môn học"
@@ -170,6 +175,11 @@ vi:
         time_duration: "Thời gian mở đề"
         opening: "Đang mở"
         closing: "Đã đóng"
+        nho_count: "Tổng câu nhớ"
+        hieu_count: "Tổng câu hiểu"
+        phan_tich_count: "Tổng câu phân tích"
+        van_dung_count: "Tổng câu vận dụng"
+        tong_hop_count: "Tổng câu tổng hợp"
       random_question_info:
         header: "Nhập thông tin"
         close: "Đóng"
@@ -193,6 +203,7 @@ vi:
         author: "Người tạo câu hỏi"
         sure: "Xác nhận loại bỏ câu hỏi"
         remove: "Loại câu hỏi khỏi đề thi"
+        cau: "Câu"
     de_thi_cau_hois:
       index:
         title: "Chọn câu hỏi từ ngân hàng"
@@ -288,6 +299,8 @@ vi:
         close: "Đóng"
       create:
         done_exam: "Bạn đã làm bài thi này"
+      cau_hois:
+        cau: "Câu"
     bai_thi_chi_tiets:
       show:
         not_found: "Không tìm thấy bài thi"
@@ -295,3 +308,5 @@ vi:
         student: "Sinh viên làm bài"
         correct_answer: "Số câu đúng"
         score: "Điểm"
+      cau_hois:
+        cau: "Câu"

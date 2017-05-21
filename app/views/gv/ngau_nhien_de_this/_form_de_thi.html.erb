@@ -62,24 +62,24 @@
       </div>
       <div class="col-md-2">
         <%= number_field_tag :phan_tram_total, "", class: "form-control",
-          placeholder: "%" %>
+          placeholder: "%", readonly: true %>
       </div>
     </div>
     <div class="row" style="margin-top: 10px;">
       <div class="col-md-2">
-        <%= number_field_tag :do_kho_nho, 0, class: "form-control", readonly: true %>
+        <%= number_field_tag :do_kho_nho, 0, class: "form-control do_kho_count" %>
       </div>
       <div class="col-md-2">
-        <%= number_field_tag :do_kho_hieu, 0, class: "form-control", readonly: true %>
+        <%= number_field_tag :do_kho_hieu, 0, class: "form-control do_kho_count" %>
       </div>
       <div class="col-md-2">
-        <%= number_field_tag :do_kho_phan_tich, 0, class: "form-control", readonly: true %>
+        <%= number_field_tag :do_kho_phan_tich, 0, class: "form-control do_kho_count" %>
       </div>
       <div class="col-md-2">
-        <%= number_field_tag :do_kho_van_dung, 0, class: "form-control", readonly: true %>
+        <%= number_field_tag :do_kho_van_dung, 0, class: "form-control do_kho_count" %>
       </div>
       <div class="col-md-2">
-        <%= number_field_tag :do_kho_tong_hop, 0, class: "form-control", readonly: true %>
+        <%= number_field_tag :do_kho_tong_hop, 0, class: "form-control do_kho_count" %>
       </div>
       <div class="col-md-2">
         <%= number_field_tag :do_kho_total, 0, class: "form-control", readonly: true %>

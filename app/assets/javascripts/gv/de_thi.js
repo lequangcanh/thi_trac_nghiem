@@ -42,13 +42,17 @@ $(document).ready(function(){
   });
 
   $('#phan_tram_tong_hop').on('keyup mouseup', function() {
-      get_value_percent();
-      $('#phan_tram_total').val(total_percent());
-      $('#do_kho_tong_hop').val(Math.round((total_question / 100) * phan_tram_tong_hop));
-      get_value_question();
-      $('#do_kho_total').val(total_question_input())
-    });
+    get_value_percent();
+    $('#phan_tram_total').val(total_percent());
+    $('#do_kho_tong_hop').val(Math.round((total_question / 100) * phan_tram_tong_hop));
+    get_value_question();
+    $('#do_kho_total').val(total_question_input())
+  });
 
+  $('.do_kho_count').on('keyup mouseup', function() {
+    get_value_question();
+    $('#do_kho_total').val(total_question_input())
+  });
 
   var get_value_percent = function() {
     phan_tram_nho = Number($('#phan_tram_nho').val());

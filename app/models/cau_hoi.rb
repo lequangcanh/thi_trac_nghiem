@@ -14,4 +14,9 @@ class CauHoi < ApplicationRecord
   validates :noi_dung, presence: true
 
   scope :newest, ->{order created_at: :desc}
+  scope :tong_cau_nho, ->{where do_kho: :nho}
+  scope :tong_cau_hieu, ->{where do_kho: :hieu}
+  scope :tong_cau_phan_tich, ->{where do_kho: :phan_tich}
+  scope :tong_cau_van_dung, ->{where do_kho: :van_dung}
+  scope :tong_cau_tong_hop, ->{where do_kho: :tong_hop}
 end

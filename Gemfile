@@ -21,6 +21,8 @@ gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
 gem "time_difference"
+gem "wicked_pdf"
+gem "wkhtmltopdf-binary"
 
 source "https://rails-assets.org" do
   gem "rails-assets-growl"

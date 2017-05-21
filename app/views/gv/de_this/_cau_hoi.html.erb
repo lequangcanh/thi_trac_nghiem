@@ -1,27 +1,28 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <span class="label label-success">
-      <%= t "gv.cau_hois.do_kho.#{cau_hoi.do_kho}" %>
-    </span>
-    <span>&nbsp;</span>
-    <span>
-      <%= cau_hoi.noi_dung.html_safe %>
-    </span>
-    </div>
-  <div class="panel-body">
-    <%= render "phuong_an", phuong_ans: cau_hoi.phuong_ans %>
-  </div>
-  <div class="panel-footer">
-    <span>
-      <%= t ".author" %>: <%= cau_hoi.giao_vien.ho_ten_day_du %>
-    </span>
-    <% if de_thi.giao_vien.is_giao_vien? current_giao_vien %>
-      <span style="float: right;">
-        <%= link_to gv_de_thi_cau_hois_path(cau_hoi_id: cau_hoi.id, de_thi_id: de_thi.id),
-          method: :delete, data: {confirm: t(".sure")} do %>
-          <%= t ".remove" %>
-        <% end %>
+<% de_thi.cau_hois.each_with_index do |cau_hoi, index| %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <span class="label label-success">
+        <%= t "gv.cau_hois.do_kho.#{cau_hoi.do_kho}" %>
       </span>
-    <% end %>
+      <span>&nbsp;</span>
+      <span><%= t ".cau" %> <%= index + 1 %>:</span>
+      <%= cau_hoi.noi_dung.html_safe %>
+      </div>
+    <div class="panel-body">
+      <%= render "phuong_an", phuong_ans: cau_hoi.phuong_ans %>
+    </div>
+    <div class="panel-footer">
+      <span>
+        <%= t ".author" %>: <%= cau_hoi.giao_vien.ho_ten_day_du %>
+      </span>
+      <% if de_thi.giao_vien.is_giao_vien? current_giao_vien %>
+        <span style="float: right;">
+          <%= link_to gv_de_thi_cau_hois_path(cau_hoi_id: cau_hoi.id, de_thi_id: de_thi.id),
+            method: :delete, data: {confirm: t(".sure")} do %>
+            <%= t ".remove" %>
+          <% end %>
+        </span>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
